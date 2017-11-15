@@ -66,6 +66,19 @@ func (DaemonSet) SwaggerDoc() map[string]string {
 	return map_DaemonSet
 }
 
+var map_DaemonSetCondition = map[string]string{
+	"":                   "DaemonSetCondition describes the state of a DaemonSet at a certain point.",
+	"type":               "Type of DaemonSet condition.",
+	"status":             "Status of the condition, one of True, False, Unknown.",
+	"lastTransitionTime": "Last time the condition transitioned from one status to another.",
+	"reason":             "The reason for the condition's last transition.",
+	"message":            "A human readable message indicating details about the transition.",
+}
+
+func (DaemonSetCondition) SwaggerDoc() map[string]string {
+	return map_DaemonSetCondition
+}
+
 var map_DaemonSetList = map[string]string{
 	"":         "DaemonSetList is a collection of daemon sets.",
 	"metadata": "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata",
@@ -101,6 +114,7 @@ var map_DaemonSetStatus = map[string]string{
 	"numberAvailable":        "The number of nodes that should be running the daemon pod and have one or more of the daemon pod running and available (ready for at least spec.minReadySeconds)",
 	"numberUnavailable":      "The number of nodes that should be running the daemon pod and have none of the daemon pod running and available (ready for at least spec.minReadySeconds)",
 	"collisionCount":         "Count of hash collisions for the DaemonSet. The DaemonSet controller uses this field as a collision avoidance mechanism when it needs to create the name for the newest ControllerRevision.",
+	"conditions":             "Represents the latest available observations of a DaemonSet's current state.",
 }
 
 func (DaemonSetStatus) SwaggerDoc() map[string]string {
@@ -435,7 +449,7 @@ func (PodSecurityPolicyList) SwaggerDoc() map[string]string {
 var map_PodSecurityPolicySpec = map[string]string{
 	"":                                "Pod Security Policy Spec defines the policy enforced.",
 	"privileged":                      "privileged determines if a pod can request to be run as privileged.",
-	"defaultAddCapabilities":          "DefaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability.  You may not list a capabiility in both DefaultAddCapabilities and RequiredDropCapabilities.",
+	"defaultAddCapabilities":          "DefaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability.  You may not list a capability in both DefaultAddCapabilities and RequiredDropCapabilities. Capabilities added here are implicitly allowed, and need not be included in the AllowedCapabilities list.",
 	"requiredDropCapabilities":        "RequiredDropCapabilities are the capabilities that will be dropped from the container.  These are required to be dropped and cannot be added.",
 	"allowedCapabilities":             "AllowedCapabilities is a list of capabilities that can be requested to add to the container. Capabilities in this field may be added at the pod author's discretion. You must not list a capability in both AllowedCapabilities and RequiredDropCapabilities.",
 	"volumes":                         "volumes is a white list of allowed volume plugins.  Empty indicates that all plugins may be used.",
