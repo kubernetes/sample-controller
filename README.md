@@ -7,7 +7,7 @@ This particular example demonstrates how to perform basic operations such as:
 
 * How to register a new custom resource (custom resource type) of type `Foo` using a CustomResourceDefinition.
 * How to create/get/list instances of your new resource type `Foo`.
-* How to setup a controller on resource handling create/update/delete events.
+* How to set up a controller on resource handling create/update/delete events.
 
 It makes use of the generators in [k8s.io/code-generator](https://github.com/kubernetes/code-generator)
 to generate a typed client, informers, listers and deep-copy functions. You can
