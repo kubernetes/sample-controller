@@ -302,6 +302,34 @@ message CephFSVolumeSource {
 // A Cinder volume must exist before mounting to a container.
 // The volume must also be in the same region as the kubelet.
 // Cinder volumes support ownership management and SELinux relabeling.
+message CinderPersistentVolumeSource {
+  // volume id used to identify the volume in cinder
+  // More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+  optional string volumeID = 1;
+
+  // Filesystem type to mount.
+  // Must be a filesystem type supported by the host operating system.
+  // Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+  // More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+  // +optional
+  optional string fsType = 2;
+
+  // Optional: Defaults to false (read/write). ReadOnly here will force
+  // the ReadOnly setting in VolumeMounts.
+  // More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+  // +optional
+  optional bool readOnly = 3;
+
+  // Optional: points to a secret object containing parameters used to connect
+  // to OpenStack.
+  // +optional
+  optional SecretReference secretRef = 4;
+}
+
+// Represents a cinder volume resource in Openstack.
+// A Cinder volume must exist before mounting to a container.
+// The volume must also be in the same region as the kubelet.
+// Cinder volumes support ownership management and SELinux relabeling.
 message CinderVolumeSource {
   // volume id used to identify the volume in cinder
   // More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
@@ -319,6 +347,11 @@ message CinderVolumeSource {
   // More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
   // +optional
   optional bool readOnly = 3;
+
+  // Optional: points to a secret object containing parameters used to connect
+  // to OpenStack.
+  // +optional
+  optional LocalObjectReference secretRef = 4;
 }
 
 // ClientIPConfig represents the configurations of Client IP based session affinity.
@@ -2358,7 +2391,7 @@ message PersistentVolumeSource {
   // Cinder represents a cinder volume attached and mounted on kubelets host machine
   // More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
   // +optional
-  optional CinderVolumeSource cinder = 8;
+  optional CinderPersistentVolumeSource cinder = 8;
 
   // CephFS represents a Ceph FS mount on the host that shares a pod's lifetime
   // +optional
@@ -3606,7 +3639,7 @@ message ResourceQuotaList {
 
 // ResourceQuotaSpec defines the desired hard limits to enforce for Quota.
 message ResourceQuotaSpec {
-  // Hard is the set of desired hard limits for each named resource.
+  // hard is the set of desired hard limits for each named resource.
   // More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
   // +optional
   map<string, k8s.io.apimachinery.pkg.api.resource.Quantity> hard = 1;
@@ -3615,6 +3648,12 @@ message ResourceQuotaSpec {
   // If not specified, the quota matches all objects.
   // +optional
   repeated string scopes = 2;
+
+  // scopeSelector is also a collection of filters like scopes that must match each object tracked by a quota
+  // but expressed using ScopeSelectorOperator in combination with possible values.
+  // For a resource to match, both scopes AND scopeSelector (if specified in spec), must be matched.
+  // +optional
+  optional ScopeSelector scopeSelector = 3;
 }
 
 // ResourceQuotaStatus defines the enforced hard limits and observed use.
@@ -3749,6 +3788,32 @@ message ScaleIOVolumeSource {
   // the ReadOnly setting in VolumeMounts.
   // +optional
   optional bool readOnly = 10;
+}
+
+// A scope selector represents the AND of the selectors represented
+// by the scoped-resource selector requirements.
+message ScopeSelector {
+  // A list of scope selector requirements by scope of the resources.
+  // +optional
+  repeated ScopedResourceSelectorRequirement matchExpressions = 1;
+}
+
+// A scoped-resource selector requirement is a selector that contains values, a scope name, and an operator
+// that relates the scope name and values.
+message ScopedResourceSelectorRequirement {
+  // The name of the scope that the selector applies to.
+  optional string scopeName = 1;
+
+  // Represents a scope's relationship to a set of values.
+  // Valid operators are In, NotIn, Exists, DoesNotExist.
+  optional string operator = 2;
+
+  // An array of string values. If the operator is In or NotIn,
+  // the values array must be non-empty. If the operator is Exists or DoesNotExist,
+  // the values array must be empty.
+  // This array is replaced during a strategic merge patch.
+  // +optional
+  repeated string values = 3;
 }
 
 // Secret holds secret data of a certain type. The total bytes of the values in
