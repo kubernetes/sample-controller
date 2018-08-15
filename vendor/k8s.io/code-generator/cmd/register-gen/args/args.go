@@ -1,5 +1,5 @@
 /*
-Copyright 2017 The Kubernetes Authors.
+Copyright 2018 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,17 +14,26 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package fake
+package args
 
 import (
-	authorizationapi "k8s.io/api/authorization/v1"
-	core "k8s.io/client-go/testing"
+	"fmt"
+
+	"k8s.io/gengo/args"
 )
 
-func (c *FakeSubjectAccessReviews) Create(sar *authorizationapi.SubjectAccessReview) (result *authorizationapi.SubjectAccessReview, err error) {
-	obj, err := c.Fake.Invokes(core.NewRootCreateAction(authorizationapi.SchemeGroupVersion.WithResource("subjectaccessreviews"), sar), &authorizationapi.SubjectAccessReview{})
-	if obj == nil {
-		return nil, err
+// NewDefaults returns default arguments for the generator.
+func NewDefaults() *args.GeneratorArgs {
+	genericArgs := args.Default().WithoutDefaultFlagParsing()
+	genericArgs.OutputFileBaseName = "zz_generated.register"
+	return genericArgs
+}
+
+// Validate checks the given arguments.
+func Validate(genericArgs *args.GeneratorArgs) error {
+	if len(genericArgs.OutputFileBaseName) == 0 {
+		return fmt.Errorf("output file base name cannot be empty")
 	}
-	return obj.(*authorizationapi.SubjectAccessReview), err
+
+	return nil
 }
