@@ -1724,10 +1724,14 @@ message LocalObjectReference {
 message LocalVolumeSource {
   // The full path to the volume on the node.
   // It can be either a directory or block device (disk, partition, ...).
-  // Directories can be represented only by PersistentVolume with VolumeMode=Filesystem.
-  // Block devices can be represented only by VolumeMode=Block, which also requires the
-  // BlockVolume alpha feature gate to be enabled.
   optional string path = 1;
+
+  // Filesystem type to mount.
+  // It applies only when the Path is a block device.
+  // Must be a filesystem type supported by the host operating system.
+  // Ex. "ext4", "xfs", "ntfs". The default value is to auto-select a fileystem if unspecified.
+  // +optional
+  optional string fsType = 2;
 }
 
 // Represents an NFS mount that lasts the lifetime of a pod.
@@ -3122,6 +3126,11 @@ message PodSpec {
   // This is an alpha feature and may change in the future.
   // +optional
   optional string runtimeClassName = 29;
+
+  // EnableServiceLinks indicates whether information about services should be injected into pod's
+  // environment variables, matching the syntax of Docker links.
+  // +optional
+  optional bool enableServiceLinks = 30;
 }
 
 // PodStatus represents information about the status of a pod. Status may trail the actual
@@ -4499,7 +4508,10 @@ message TopologySelectorTerm {
 // TypedLocalObjectReference contains enough information to let you locate the
 // typed referenced object inside the same namespace.
 message TypedLocalObjectReference {
-  // APIGroup is the group for the resource being referenced
+  // APIGroup is the group for the resource being referenced.
+  // If APIGroup is not specified, the specified Kind must be in the core API group.
+  // For any other third-party types, APIGroup is required.
+  // +optional
   optional string apiGroup = 1;
 
   // Kind is the type of resource being referenced

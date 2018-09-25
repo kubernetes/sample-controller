@@ -1601,10 +1601,14 @@ type KeyToPath struct {
 type LocalVolumeSource struct {
 	// The full path to the volume on the node.
 	// It can be either a directory or block device (disk, partition, ...).
-	// Directories can be represented only by PersistentVolume with VolumeMode=Filesystem.
-	// Block devices can be represented only by VolumeMode=Block, which also requires the
-	// BlockVolume alpha feature gate to be enabled.
 	Path string `json:"path" protobuf:"bytes,1,opt,name=path"`
+
+	// Filesystem type to mount.
+	// It applies only when the Path is a block device.
+	// Must be a filesystem type supported by the host operating system.
+	// Ex. "ext4", "xfs", "ntfs". The default value is to auto-select a fileystem if unspecified.
+	// +optional
+	FSType *string `json:"fsType,omitempty" protobuf:"bytes,2,opt,name=fsType"`
 }
 
 // Represents storage that is managed by an external CSI volume driver (Beta feature)
@@ -2887,7 +2891,16 @@ type PodSpec struct {
 	// This is an alpha feature and may change in the future.
 	// +optional
 	RuntimeClassName *string `json:"runtimeClassName,omitempty" protobuf:"bytes,29,opt,name=runtimeClassName"`
+	// EnableServiceLinks indicates whether information about services should be injected into pod's
+	// environment variables, matching the syntax of Docker links.
+	// +optional
+	EnableServiceLinks *bool `json:"enableServiceLinks,omitempty" protobuf:"varint,30,opt,name=enableServiceLinks"`
 }
+
+const (
+	// The default value for enableServiceLinks attribute.
+	DefaultEnableServiceLinks = true
+)
 
 // HostAlias holds the mapping between IP and hostnames that will be injected as an entry in the
 // pod's hosts file.
@@ -4491,8 +4504,11 @@ type LocalObjectReference struct {
 // TypedLocalObjectReference contains enough information to let you locate the
 // typed referenced object inside the same namespace.
 type TypedLocalObjectReference struct {
-	// APIGroup is the group for the resource being referenced
-	APIGroup string `json:"apiGroup" protobuf:"bytes,1,opt,name=apiGroup"`
+	// APIGroup is the group for the resource being referenced.
+	// If APIGroup is not specified, the specified Kind must be in the core API group.
+	// For any other third-party types, APIGroup is required.
+	// +optional
+	APIGroup *string `json:"apiGroup" protobuf:"bytes,1,opt,name=apiGroup"`
 	// Kind is the type of resource being referenced
 	Kind string `json:"kind" protobuf:"bytes,2,opt,name=kind"`
 	// Name is the name of resource being referenced
