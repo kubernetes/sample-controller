@@ -891,8 +891,9 @@ func (LocalObjectReference) SwaggerDoc() map[string]string {
 }
 
 var map_LocalVolumeSource = map[string]string{
-	"":     "Local represents directly-attached storage with node affinity (Beta feature)",
-	"path": "The full path to the volume on the node. It can be either a directory or block device (disk, partition, ...). Directories can be represented only by PersistentVolume with VolumeMode=Filesystem. Block devices can be represented only by VolumeMode=Block, which also requires the BlockVolume alpha feature gate to be enabled.",
+	"":       "Local represents directly-attached storage with node affinity (Beta feature)",
+	"path":   "The full path to the volume on the node. It can be either a directory or block device (disk, partition, ...).",
+	"fsType": "Filesystem type to mount. It applies only when the Path is a block device. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\". The default value is to auto-select a fileystem if unspecified.",
 }
 
 func (LocalVolumeSource) SwaggerDoc() map[string]string {
@@ -2210,7 +2211,7 @@ func (TopologySelectorTerm) SwaggerDoc() map[string]string {
 
 var map_TypedLocalObjectReference = map[string]string{
 	"":         "TypedLocalObjectReference contains enough information to let you locate the typed referenced object inside the same namespace.",
-	"apiGroup": "APIGroup is the group for the resource being referenced",
+	"apiGroup": "APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.",
 	"kind":     "Kind is the type of resource being referenced",
 	"name":     "Name is the name of resource being referenced",
 }
