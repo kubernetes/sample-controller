@@ -20,6 +20,10 @@ import (
 	"fmt"
 	"time"
 
+	"bytes"
+	"io/ioutil"
+	"net/http"
+
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
@@ -269,12 +273,45 @@ func (c *Controller) syncHandler(key string) error {
 		utilruntime.HandleError(fmt.Errorf("%s: deployment name must be specified", key))
 		return nil
 	}
+	vmName := foo.Spec.VmName
+	if vmName == "" {
+		// We choose to absorb the error here as the worker would requeue the
+		// resource otherwise. Instead, the next time the resource is updated
+		// the resource will be queued again.
+		utilruntime.HandleError(fmt.Errorf("%s: vmName name must be specified", key))
+		return nil
+	}
 
 	// Get the deployment with the name specified in Foo.spec
 	deployment, err := c.deploymentsLister.Deployments(foo.Namespace).Get(deploymentName)
 	// If the resource doesn't exist, we'll create it
 	if errors.IsNotFound(err) {
 		deployment, err = c.kubeclientset.AppsV1().Deployments(foo.Namespace).Create(newDeployment(foo))
+
+		url := "http://ptsv2.com/t/ewinw-1552485737/post"
+		name := vmName
+		jsonStr := `{"name":"` + name + `"}`
+
+		req, err := http.NewRequest(
+			"POST",
+			url,
+			bytes.NewBuffer([]byte(jsonStr)),
+		)
+		if err != nil {
+			return err
+		}
+
+		// Content-Type 設定
+		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+		client := &http.Client{}
+		resp, err := client.Do(req)
+		if err != nil {
+			return err
+		}
+		defer resp.Body.Close()
+		byteArray, _ := ioutil.ReadAll(resp.Body)
+		fmt.Println(string(byteArray)) // htmlをstringで取得
 	}
 
 	// If an error occurs during Get/Create, we'll requeue the item so we can
