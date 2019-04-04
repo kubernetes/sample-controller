@@ -208,11 +208,11 @@
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "75debb4b680d"
+			"Rev": "2e1a3ed22ac5"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "916349668d3d"
+			"Rev": "edcfb81a444e"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
