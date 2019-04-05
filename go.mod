@@ -1,16 +1,14 @@
 // This is a generated file. Do not edit directly.
-// Run hack/pin-dependency.sh to change pinned dependency versions.
-// Run hack/update-vendor.sh to update go.mod files and the vendor directory.
 
 module k8s.io/sample-controller
 
 go 1.12
 
 require (
-	k8s.io/api v0.0.0-20190404065945-709cf190c7b7
-	k8s.io/apimachinery v0.0.0-20190404210755-b5bc33fc46a2
-	k8s.io/client-go v0.0.0-20190405052620-1268fab57b4f
-	k8s.io/code-generator v0.0.0-20190405052243-97cad0f8b2f3
+	k8s.io/api v0.0.0-20190405092450-f54612431266
+	k8s.io/apimachinery v0.0.0-20190405092352-bd3bd0cdce9a
+	k8s.io/client-go v0.0.0-20190405092624-95d8a92c4875
+	k8s.io/code-generator v0.0.0-20190405092245-dc2178f11368
 	k8s.io/klog v0.0.0-20190306015804-8e90cee79f82
 )
 
@@ -267,11 +265,11 @@ replace (
 	gopkg.in/yaml.v1 => gopkg.in/yaml.v1 v1.0.0-20140924161607-9f9df34309c0
 	gopkg.in/yaml.v2 => gopkg.in/yaml.v2 v2.2.1
 	gotest.tools => gotest.tools v2.2.0+incompatible
-	k8s.io/api => k8s.io/api v0.0.0-20190404065945-709cf190c7b7
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20190404210755-b5bc33fc46a2
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20190405052620-1268fab57b4f
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20190405052243-97cad0f8b2f3
-	k8s.io/component-base => k8s.io/component-base v0.0.0-20190404070505-d7891e8054ca
+	k8s.io/api => k8s.io/api v0.0.0-20190405092450-f54612431266
+	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20190405092352-bd3bd0cdce9a
+	k8s.io/client-go => k8s.io/client-go v0.0.0-20190405092624-95d8a92c4875
+	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20190405092245-dc2178f11368
+	k8s.io/component-base => k8s.io/component-base v0.0.0-20190405092941-79a63e28c077
 	k8s.io/gengo => k8s.io/gengo v0.0.0-20181106084056-51747d6e00da
 	k8s.io/heapster => k8s.io/heapster v1.2.0-beta.1
 	k8s.io/klog => k8s.io/klog v0.0.0-20190306015804-8e90cee79f82
