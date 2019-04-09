@@ -15,8 +15,12 @@
 			"Rev": "v11.1.0"
 		},
 		{
+			"ImportPath": "github.com/BurntSushi/xgb",
+			"Rev": "27f122750802"
+		},
+		{
 			"ImportPath": "github.com/davecgh/go-spew",
-			"Rev": "782f4967f2dc"
+			"Rev": "v1.1.1"
 		},
 		{
 			"ImportPath": "github.com/dgrijalva/jwt-go",
@@ -60,7 +64,7 @@
 		},
 		{
 			"ImportPath": "github.com/google/uuid",
-			"Rev": "8c31c18f31ed"
+			"Rev": "v1.0.0"
 		},
 		{
 			"ImportPath": "github.com/googleapis/gnostic",
@@ -116,7 +120,7 @@
 		},
 		{
 			"ImportPath": "github.com/pmezard/go-difflib",
-			"Rev": "5d4384ee4fb2"
+			"Rev": "v1.0.0"
 		},
 		{
 			"ImportPath": "github.com/remyoudompheng/bigfft",
@@ -128,15 +132,23 @@
 		},
 		{
 			"ImportPath": "github.com/stretchr/testify",
-			"Rev": "c679ae2cc0cb"
+			"Rev": "v1.2.2"
 		},
 		{
 			"ImportPath": "golang.org/x/crypto",
-			"Rev": "de0752318171"
+			"Rev": "e84da0312774"
 		},
 		{
 			"ImportPath": "golang.org/x/exp",
-			"Rev": "8460e604b9de"
+			"Rev": "4b39c73a6495"
+		},
+		{
+			"ImportPath": "golang.org/x/image",
+			"Rev": "0694c2d4d067"
+		},
+		{
+			"ImportPath": "golang.org/x/mobile",
+			"Rev": "d3739f865fa6"
 		},
 		{
 			"ImportPath": "golang.org/x/net",
@@ -152,11 +164,11 @@
 		},
 		{
 			"ImportPath": "golang.org/x/sys",
-			"Rev": "95c657629925"
+			"Rev": "3b5209105503"
 		},
 		{
 			"ImportPath": "golang.org/x/text",
-			"Rev": "b19bf474d317"
+			"Rev": "e6919f6577db"
 		},
 		{
 			"ImportPath": "golang.org/x/time",
@@ -164,11 +176,11 @@
 		},
 		{
 			"ImportPath": "golang.org/x/tools",
-			"Rev": "7f7074d5bcfd"
+			"Rev": "aa82965741a9"
 		},
 		{
 			"ImportPath": "gonum.org/v1/gonum",
-			"Rev": "cebdade430cc"
+			"Rev": "3d26580ed485"
 		},
 		{
 			"ImportPath": "gonum.org/v1/netlib",
@@ -200,19 +212,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "b1350b9e3bc2"
+			"Rev": "d687e77c8ae9"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "3115ef20f323"
+			"Rev": "760d1845f48b"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "b7e8408f656e"
+			"Rev": "ca8df85b1798"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "e317c52975f8"
+			"Rev": "826a68e0d120"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
