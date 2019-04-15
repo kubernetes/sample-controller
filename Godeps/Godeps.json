@@ -224,7 +224,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "5c40078c1b12"
+			"Rev": "821be5c9cfe4"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
