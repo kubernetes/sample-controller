@@ -92,7 +92,7 @@ gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 h1:uRGJdciOHaEIrze2W8Q3AKkep
 gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7/go.mod h1:dt/ZhP58zS4L8KSrWDmTeBkI65Dw0HsyUHuEVlX15mw=
 gopkg.in/yaml.v2 v2.2.1 h1:mUhvW9EsL+naU5Q3cakzfE91YhliOondGd6ZrsDBHQE=
 gopkg.in/yaml.v2 v2.2.1/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
-k8s.io/api v0.0.0-20190424052528-e8c4fd2c9be3/go.mod h1:D0FNL9U5fkHG3etktHaPUQJ6aC5Lz84y063tgJXlQOA=
+k8s.io/api v0.0.0-20190424052529-7fd04442e4f5/go.mod h1:D0FNL9U5fkHG3etktHaPUQJ6aC5Lz84y063tgJXlQOA=
 k8s.io/apimachinery v0.0.0-20190424052434-11f1676e3da4/go.mod h1:5CBnzrKYGHzv9ZsSKmQ8wHt4XI4/TUBPDwYM9FlZMyw=
 k8s.io/client-go v0.0.0-20190424052710-157c3d454138/go.mod h1:ps3T260wp5Qny8Oa4/uRYRUuLvt5F/9CFAUry2GY1FY=
 k8s.io/code-generator v0.0.0-20190419212335-ff26e7842f9d/go.mod h1:rVrFWfTVftGH7bb972nWC6N4QkJ4LU7FOXu8GH2UkJo=
