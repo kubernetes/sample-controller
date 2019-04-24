@@ -8,7 +8,7 @@
 	"Deps": [
 		{
 			"ImportPath": "cloud.google.com/go",
-			"Rev": "3b1ae45394a2"
+			"Rev": "v0.34.0"
 		},
 		{
 			"ImportPath": "github.com/Azure/go-autorest",
@@ -156,7 +156,7 @@
 		},
 		{
 			"ImportPath": "golang.org/x/oauth2",
-			"Rev": "a6bd8cefa181"
+			"Rev": "9f3314589c9a"
 		},
 		{
 			"ImportPath": "golang.org/x/sync",
@@ -212,19 +212,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "b8e4ab4b136a"
+			"Rev": "e8c4fd2c9be3"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "b3683fe6b520"
+			"Rev": "11f1676e3da4"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "1d2e9628a1ee"
+			"Rev": "157c3d454138"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "87cbbb0903cf"
+			"Rev": "ff26e7842f9d"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
