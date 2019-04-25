@@ -12,7 +12,7 @@
 		},
 		{
 			"ImportPath": "github.com/Azure/go-autorest",
-			"Rev": "v11.1.0"
+			"Rev": "v11.1.2"
 		},
 		{
 			"ImportPath": "github.com/BurntSushi/xgb",
@@ -212,15 +212,15 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "7fd04442e4f5"
+			"Rev": "181e1f9c52c1"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "11f1676e3da4"
+			"Rev": "17f84483f500"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "157c3d454138"
+			"Rev": "65184652c889"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
