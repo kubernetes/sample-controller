@@ -23,5 +23,3 @@ replace (
 	k8s.io/client-go => k8s.io/client-go v0.0.0-20190624085356-2c6e35a5b9cf
 	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20190620073620-d55040311883
 )
-
-replace k8s.io/component-base => k8s.io/component-base v0.0.0-20190624085813-dd74dcc4bb91
