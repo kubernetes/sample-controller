@@ -99,6 +99,18 @@
 			"Rev": "v1.1.6"
 		},
 		{
+			"ImportPath": "github.com/kr/pretty",
+			"Rev": "v0.1.0"
+		},
+		{
+			"ImportPath": "github.com/kr/pty",
+			"Rev": "v1.1.1"
+		},
+		{
+			"ImportPath": "github.com/kr/text",
+			"Rev": "v0.1.0"
+		},
+		{
 			"ImportPath": "github.com/modern-go/concurrent",
 			"Rev": "bacd9c7ef1dd"
 		},
@@ -200,7 +212,7 @@
 		},
 		{
 			"ImportPath": "gopkg.in/check.v1",
-			"Rev": "20d25e280405"
+			"Rev": "788fd7840127"
 		},
 		{
 			"ImportPath": "gopkg.in/fsnotify.v1",
@@ -220,19 +232,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "95846d7ef82a"
+			"Rev": "acea843d18eb"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "961b39a1baa0"
+			"Rev": "bc5732d141a8"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "2c6e35a5b9cf"
+			"Rev": "11059204e07c"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "d55040311883"
+			"Rev": "86aa6a6a5cf3"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
