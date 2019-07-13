@@ -19,6 +19,14 @@
 			"Rev": "27f122750802"
 		},
 		{
+			"ImportPath": "github.com/PuerkitoBio/purell",
+			"Rev": "v1.1.1"
+		},
+		{
+			"ImportPath": "github.com/PuerkitoBio/urlesc",
+			"Rev": "de5bf2ad4578"
+		},
+		{
 			"ImportPath": "github.com/davecgh/go-spew",
 			"Rev": "v1.1.1"
 		},
@@ -35,12 +43,32 @@
 			"Rev": "c4fc26588b6e"
 		},
 		{
+			"ImportPath": "github.com/emicklei/go-restful",
+			"Rev": "v2.9.5"
+		},
+		{
 			"ImportPath": "github.com/evanphx/json-patch",
 			"Rev": "v4.2.0"
 		},
 		{
 			"ImportPath": "github.com/fsnotify/fsnotify",
 			"Rev": "v1.4.7"
+		},
+		{
+			"ImportPath": "github.com/go-openapi/jsonpointer",
+			"Rev": "v0.19.2"
+		},
+		{
+			"ImportPath": "github.com/go-openapi/jsonreference",
+			"Rev": "v0.19.2"
+		},
+		{
+			"ImportPath": "github.com/go-openapi/spec",
+			"Rev": "v0.19.2"
+		},
+		{
+			"ImportPath": "github.com/go-openapi/swag",
+			"Rev": "v0.19.2"
 		},
 		{
 			"ImportPath": "github.com/gogo/protobuf",
@@ -104,11 +132,15 @@
 		},
 		{
 			"ImportPath": "github.com/kr/pty",
-			"Rev": "v1.1.1"
+			"Rev": "v1.1.5"
 		},
 		{
 			"ImportPath": "github.com/kr/text",
 			"Rev": "v0.1.0"
+		},
+		{
+			"ImportPath": "github.com/mailru/easyjson",
+			"Rev": "94de47d64c63"
 		},
 		{
 			"ImportPath": "github.com/modern-go/concurrent",
@@ -152,7 +184,7 @@
 		},
 		{
 			"ImportPath": "github.com/stretchr/objx",
-			"Rev": "v0.1.0"
+			"Rev": "v0.2.0"
 		},
 		{
 			"ImportPath": "github.com/stretchr/testify",
@@ -240,15 +272,15 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "391ed67afa7b"
+			"Rev": "75ce4d1e60f1"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "e8d4ff64b701"
+			"Rev": "611184f7c43a"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "bc18bbf3b8f3"
+			"Rev": "93d7507fc8ff"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
