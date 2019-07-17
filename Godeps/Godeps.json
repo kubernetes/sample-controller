@@ -19,6 +19,10 @@
 			"Rev": "27f122750802"
 		},
 		{
+			"ImportPath": "github.com/NYTimes/gziphandler",
+			"Rev": "56545f4a5d46"
+		},
+		{
 			"ImportPath": "github.com/PuerkitoBio/purell",
 			"Rev": "v1.1.1"
 		},
@@ -53,6 +57,10 @@
 		{
 			"ImportPath": "github.com/fsnotify/fsnotify",
 			"Rev": "v1.4.7"
+		},
+		{
+			"ImportPath": "github.com/ghodss/yaml",
+			"Rev": "73d445a93680"
 		},
 		{
 			"ImportPath": "github.com/go-openapi/jsonpointer",
@@ -149,6 +157,10 @@
 		{
 			"ImportPath": "github.com/modern-go/reflect2",
 			"Rev": "v1.0.1"
+		},
+		{
+			"ImportPath": "github.com/munnerz/goautoneg",
+			"Rev": "a547fc61f48d"
 		},
 		{
 			"ImportPath": "github.com/mxk/go-flowrate",
@@ -268,23 +280,23 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "31fe033ae6f9"
+			"Rev": "653c86b0609b"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "75ce4d1e60f1"
+			"Rev": "0bb8574e0887"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "611184f7c43a"
+			"Rev": "0c47f9da0001"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "93d7507fc8ff"
+			"Rev": "77f3a1fe56bb"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
-			"Rev": "f8a0810f38af"
+			"Rev": "0689ccc1d7d6"
 		},
 		{
 			"ImportPath": "k8s.io/klog",
@@ -292,7 +304,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/kube-openapi",
-			"Rev": "b3a7cee44a30"
+			"Rev": "33be087ad058"
 		},
 		{
 			"ImportPath": "k8s.io/utils",
@@ -317,6 +329,10 @@
 		{
 			"ImportPath": "modernc.org/xc",
 			"Rev": "v1.0.0"
+		},
+		{
+			"ImportPath": "sigs.k8s.io/structured-merge-diff",
+			"Rev": "15d366b2352e"
 		},
 		{
 			"ImportPath": "sigs.k8s.io/yaml",
