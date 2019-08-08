@@ -132,7 +132,7 @@
 		},
 		{
 			"ImportPath": "github.com/json-iterator/go",
-			"Rev": "v1.1.6"
+			"Rev": "v1.1.7"
 		},
 		{
 			"ImportPath": "github.com/kisielk/errcheck",
@@ -288,19 +288,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "8b51d7113622"
+			"Rev": "077ce48e77da"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "162a2dabc72f"
+			"Rev": "ac5d3b819fc6"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "4fd06e107451"
+			"Rev": "396a06da3bd7"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "c4ef572adb98"
+			"Rev": "d0071a119380"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
