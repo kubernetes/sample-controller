@@ -11,8 +11,28 @@
 			"Rev": "v0.34.0"
 		},
 		{
-			"ImportPath": "github.com/Azure/go-autorest",
-			"Rev": "v11.1.2"
+			"ImportPath": "github.com/Azure/go-autorest/autorest",
+			"Rev": "v0.9.0"
+		},
+		{
+			"ImportPath": "github.com/Azure/go-autorest/autorest/adal",
+			"Rev": "v0.5.0"
+		},
+		{
+			"ImportPath": "github.com/Azure/go-autorest/autorest/date",
+			"Rev": "v0.1.0"
+		},
+		{
+			"ImportPath": "github.com/Azure/go-autorest/autorest/mocks",
+			"Rev": "v0.2.0"
+		},
+		{
+			"ImportPath": "github.com/Azure/go-autorest/logger",
+			"Rev": "v0.1.0"
+		},
+		{
+			"ImportPath": "github.com/Azure/go-autorest/tracing",
+			"Rev": "v0.5.0"
 		},
 		{
 			"ImportPath": "github.com/BurntSushi/xgb",
@@ -36,7 +56,7 @@
 		},
 		{
 			"ImportPath": "github.com/dgrijalva/jwt-go",
-			"Rev": "01aeca54ebda"
+			"Rev": "v3.2.0"
 		},
 		{
 			"ImportPath": "github.com/docker/spdystream",
@@ -61,6 +81,10 @@
 		{
 			"ImportPath": "github.com/ghodss/yaml",
 			"Rev": "73d445a93680"
+		},
+		{
+			"ImportPath": "github.com/go-logr/logr",
+			"Rev": "v0.1.0"
 		},
 		{
 			"ImportPath": "github.com/go-openapi/jsonpointer",
@@ -288,27 +312,27 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "077ce48e77da"
+			"Rev": "8eee47dbc9ed"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "ac5d3b819fc6"
+			"Rev": "d4a3b9129e40"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "396a06da3bd7"
+			"Rev": "a240a565b073"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "d0071a119380"
+			"Rev": "6ce24b93cb87"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
-			"Rev": "0689ccc1d7d6"
+			"Rev": "955ffa8fcfc9"
 		},
 		{
 			"ImportPath": "k8s.io/klog",
-			"Rev": "v0.3.1"
+			"Rev": "v0.4.0"
 		},
 		{
 			"ImportPath": "k8s.io/kube-openapi",
