@@ -232,7 +232,7 @@
 		},
 		{
 			"ImportPath": "golang.org/x/net",
-			"Rev": "65e2d4e15006"
+			"Rev": "cdfb69ac37fc"
 		},
 		{
 			"ImportPath": "golang.org/x/oauth2",
@@ -292,19 +292,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "4c9d9526570f"
+			"Rev": "0772a1bdf941"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "d2c4b5819cd0"
+			"Rev": "533d101be9a6"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "7eecfc25a0aa"
+			"Rev": "e290f153d148"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "48723802c45e"
+			"Rev": "5654a2f3dfb8"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
