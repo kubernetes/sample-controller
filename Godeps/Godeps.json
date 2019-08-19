@@ -216,7 +216,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "e14a4b1f5f84"
+			"Rev": "463df2a5c347"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
@@ -224,7 +224,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "637fc595d17a"
+			"Rev": "80a1a93c2f21"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
