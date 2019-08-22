@@ -169,6 +169,7 @@ gopkg.in/yaml.v2 v2.2.2 h1:ZCJp+EgiOT7lHqUV2J862kp8Qj64Jo6az82+3Td9dZw=
 gopkg.in/yaml.v2 v2.2.2/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
 k8s.io/api v0.0.0-20190820101204-3efd428ce51b/go.mod h1:Qzk+0nJ70fr1C/s9u/hmb27VzsPJbMXp/85hMFbyuZ4=
 k8s.io/apimachinery v0.0.0-20190820074809-31b1e1ea64dc/go.mod h1:EZoIMuAgG/4v58YL+bz0kqnivqupk28fKYxFCa5e6X8=
+k8s.io/client-go v0.0.0-20190820102012-2597db3f9d08 h1:A4DKP8+2qJZPCDYFcHDQG8e3A8W46vujYHPe0VBQTIM=
 k8s.io/client-go v0.0.0-20190820102012-2597db3f9d08/go.mod h1:2OquKG6cDS3ijMIMA2UwZx44kxEMJeZd6f3RtlezYJM=
 k8s.io/code-generator v0.0.0-20190820100630-060a3d12ce80/go.mod h1:cGLmodO4Xf0bnfw8/mLEXWYjiT5N9RFA9NzrYzP8VhM=
 k8s.io/gengo v0.0.0-20190128074634-0689ccc1d7d6 h1:4s3/R4+OYYYUKptXPhZKjQ04WJ6EhQQVFdjOFvCazDk=
