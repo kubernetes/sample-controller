@@ -5,3 +5,5 @@ metadata:
 spec:
   deploymentName: example-foo
   replicas: 1
+  taskCount: 120
+  taskRuntime: 15000
