@@ -36,11 +36,16 @@ type Foo struct {
 type FooSpec struct {
 	DeploymentName string `json:"deploymentName"`
 	Replicas       *int32 `json:"replicas"`
+	TaskCount      *int32 `json:"taskCount"`
+	TaskRuntime    *int32 `json:"taskRuntime"`
 }
 
 // FooStatus is the status for a Foo resource
 type FooStatus struct {
 	AvailableReplicas int32 `json:"availableReplicas"`
+	RunningTasks      int32 `json:"runningTasks"`
+	PendingTasks      int32 `json:"pendingTasks"`
+	DoneTasks         int32 `json:"doneTasks"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -18,6 +18,10 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
+	"os/exec"
+	"strconv"
+	"strings"
 	"time"
 
 	appsv1 "k8s.io/api/apps/v1"
@@ -274,6 +278,18 @@ func (c *Controller) syncHandler(key string) error {
 	// If the resource doesn't exist, we'll create it
 	if errors.IsNotFound(err) {
 		deployment, err = c.kubeclientset.AppsV1().Deployments(foo.Namespace).Create(newDeployment(foo))
+
+		//use the deployment as a flag, only run the client when the deployment is created.
+		parameter := fmt.Sprintf("-m %d -r %d", *foo.Spec.TaskCount, *foo.Spec.TaskRuntime)
+		command := "/tmp/sym.sh " + parameter
+		go func() {
+			cmd := exec.Command("/bin/bash", "-c", command)
+			_, err := cmd.Output()
+			if err != nil {
+				fmt.Println(err)
+			}
+			cmd.Wait()
+		}()
 	}
 
 	// If an error occurs during Get/Create, we'll requeue the item so we can
@@ -323,11 +339,67 @@ func (c *Controller) updateFooStatus(foo *samplev1alpha1.Foo, deployment *appsv1
 	// Or create a copy manually for better performance
 	fooCopy := foo.DeepCopy()
 	fooCopy.Status.AvailableReplicas = deployment.Status.AvailableReplicas
+
+	command := "/tmp/sym_monitor.sh"
+	cmd := exec.Command("/bin/bash", "-c", command)
+	stdout, _ := cmd.StdoutPipe()
+	cmd.Start()
+	content, err := ioutil.ReadAll(stdout)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		results := strings.Split(string(content), " ")
+
+		/* the output is as following, and splitted by xargs, parse them here
+		......
+		Running tasks:                               0
+		Pending tasks in open sessions:              0
+		......
+		Done tasks since SSM started:                3
+		......
+		*/
+
+		fooCopy.Status.RunningTasks = 0
+		fooCopy.Status.PendingTasks = 0
+		fooCopy.Status.DoneTasks = 0
+
+		for i := 0; i < len(results); i++ {
+			if strings.EqualFold(results[i], "Running") && strings.EqualFold(results[i+1], "tasks:") {
+				ret, err := strconv.ParseInt(results[i+2], 10, 32)
+				if err != nil {
+					fmt.Println(err)
+				} else {
+					fooCopy.Status.RunningTasks = int32(ret)
+				}
+			}
+
+			if strings.EqualFold(results[i], "Pending") && strings.EqualFold(results[i+1], "tasks") && strings.EqualFold(results[i+2], "in") && strings.EqualFold(results[i+3], "open") && strings.EqualFold(results[i+4], "sessions:") {
+				ret, err := strconv.ParseInt(results[i+5], 10, 32)
+				if err != nil {
+					fmt.Println(err)
+				} else {
+					fooCopy.Status.PendingTasks = int32(ret)
+				}
+			}
+
+			if strings.EqualFold(results[i], "Done") && strings.EqualFold(results[i+1], "tasks") && strings.EqualFold(results[i+2], "since") && strings.EqualFold(results[i+3], "SSM") && strings.EqualFold(results[i+4], "started:") {
+				ret, err := strconv.ParseInt(results[i+5], 10, 32)
+				if err != nil {
+					fmt.Println(err)
+				} else {
+					fooCopy.Status.DoneTasks = int32(ret)
+				}
+			}
+		}
+	}
+	cmd.Wait()
+
 	// If the CustomResourceSubresources feature gate is not enabled,
 	// we must use Update instead of UpdateStatus to update the Status block of the Foo resource.
 	// UpdateStatus will not allow changes to the Spec of the resource,
 	// which is ideal for ensuring nothing other than resource status has been updated.
-	_, err := c.sampleclientset.SamplecontrollerV1alpha1().Foos(foo.Namespace).Update(fooCopy)
+	//_, err := c.sampleclientset.SamplecontrollerV1alpha1().Foos(foo.Namespace).Update(fooCopy)
+	_, err = c.sampleclientset.SamplecontrollerV1alpha1().Foos(foo.Namespace).UpdateStatus(fooCopy)
 	return err
 }
 

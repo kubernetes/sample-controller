@@ -93,6 +93,16 @@ func (in *FooSpec) DeepCopyInto(out *FooSpec) {
 		*out = new(int32)
 		**out = **in
 	}
+	if in.TaskCount != nil {
+		in, out := &in.TaskCount, &out.TaskCount
+		*out = new(int32)
+		**out = **in
+	}
+	if in.TaskRuntime != nil {
+		in, out := &in.TaskRuntime, &out.TaskRuntime
+		*out = new(int32)
+		**out = **in
+	}
 	return
 }
 
