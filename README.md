@@ -90,7 +90,7 @@ go build -o sample-controller .
 kubectl create -f artifacts/examples/crd.yaml
 
 # create a custom resource of type SessionJob
-kubectl create -f artifacts/examples/example-foo.yaml
+kubectl create -f artifacts/examples/example-sessionjob.yaml
 
 # check deployments created through the custom resource
 kubectl get deployments
