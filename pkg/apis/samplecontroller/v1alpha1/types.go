@@ -23,25 +23,25 @@ import (
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
-// Foo is a specification for a Foo resource
-type Foo struct {
+// SessionJob is a specification for a SessionJob resource
+type SessionJob struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   FooSpec   `json:"spec"`
-	Status FooStatus `json:"status"`
+	Spec   SessionJobSpec   `json:"spec"`
+	Status SessionJobStatus `json:"status"`
 }
 
-// FooSpec is the spec for a Foo resource
-type FooSpec struct {
+// SessionJobSpec is the spec for a SessionJob resource
+type SessionJobSpec struct {
 	DeploymentName string `json:"deploymentName"`
 	Replicas       *int32 `json:"replicas"`
 	TaskCount      *int32 `json:"taskCount"`
 	TaskRuntime    *int32 `json:"taskRuntime"`
 }
 
-// FooStatus is the status for a Foo resource
-type FooStatus struct {
+// SessionJobStatus is the status for a SessionJob resource
+type SessionJobStatus struct {
 	AvailableReplicas int32 `json:"availableReplicas"`
 	RunningTasks      int32 `json:"runningTasks"`
 	PendingTasks      int32 `json:"pendingTasks"`
@@ -50,10 +50,10 @@ type FooStatus struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
-// FooList is a list of Foo resources
-type FooList struct {
+// SessionJobList is a list of SessionJob resources
+type SessionJobList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata"`
 
-	Items []Foo `json:"items"`
+	Items []SessionJob `json:"items"`
 }
