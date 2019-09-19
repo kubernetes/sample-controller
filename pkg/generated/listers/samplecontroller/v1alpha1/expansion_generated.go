@@ -18,10 +18,10 @@ limitations under the License.
 
 package v1alpha1
 
-// FooListerExpansion allows custom methods to be added to
-// FooLister.
-type FooListerExpansion interface{}
+// SessionJobListerExpansion allows custom methods to be added to
+// SessionJobLister.
+type SessionJobListerExpansion interface{}
 
-// FooNamespaceListerExpansion allows custom methods to be added to
-// FooNamespaceLister.
-type FooNamespaceListerExpansion interface{}
+// SessionJobNamespaceListerExpansion allows custom methods to be added to
+// SessionJobNamespaceLister.
+type SessionJobNamespaceListerExpansion interface{}

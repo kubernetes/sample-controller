@@ -1,9 +1,9 @@
 apiVersion: samplecontroller.k8s.io/v1alpha1
-kind: Foo
+kind: SessionJob
 metadata:
-  name: example-foo
+  name: example-sessionjob
 spec:
-  deploymentName: example-foo
+  deploymentName: example-sessionjob
   replicas: 1
   taskCount: 120
   taskRuntime: 15000
