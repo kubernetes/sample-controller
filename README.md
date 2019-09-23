@@ -5,8 +5,7 @@ defined with a CustomResourceDefinition (CRD).
 
 This particular example demonstrates how to perform basic Symphony client operations such as:
 
-* How to specify the task input/output path.
-* How to specify the service type.
+* How to specify the task input/output path and the callback fucntion.
 * How to get the task status.
 
 ## Details

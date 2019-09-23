@@ -280,8 +280,8 @@ func (c *Controller) syncHandler(key string) error {
 		deployment, err = c.kubeclientset.AppsV1().Deployments(sessionjob.Namespace).Create(newDeployment(sessionjob))
 
 		//use the deployment as a flag, only run the client when the deployment is created.
-		parameter := fmt.Sprintf("-m %d -r %d", *sessionjob.Spec.TaskCount, *sessionjob.Spec.TaskRuntime)
-		command := "/tmp/sym.sh " + parameter
+		//parameter := fmt.Sprintf("-m %d -r %d", *sessionjob.Spec.TaskCount, *sessionjob.Spec.TaskRuntime)
+		command := "/opt/ibm/sample-controller/sym.sh " + sessionjob.Spec.TaskInput + " " + sessionjob.Spec.TaskFunction + " " + sessionjob.Spec.TaskOutput
 		go func() {
 			cmd := exec.Command("/bin/bash", "-c", command)
 			_, err := cmd.Output()
@@ -338,9 +338,9 @@ func (c *Controller) updateSessionJobStatus(sessionjob *samplev1alpha1.SessionJo
 	// You can use DeepCopy() to make a deep copy of original object and modify this copy
 	// Or create a copy manually for better performance
 	sessionjobCopy := sessionjob.DeepCopy()
-	sessionjobCopy.Status.AvailableReplicas = deployment.Status.AvailableReplicas
+	//sessionjobCopy.Status.AvailableReplicas = deployment.Status.AvailableReplicas
 
-	command := "/tmp/sym_monitor.sh"
+	command := "/opt/ibm/sample-controller/sym_monitor.sh"
 	cmd := exec.Command("/bin/bash", "-c", command)
 	stdout, _ := cmd.StdoutPipe()
 	cmd.Start()
