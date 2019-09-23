@@ -1,6 +1,6 @@
-# sample-controller
+# sym-client-controller
 
-This repository implements a simple controller for watching SessionJob resources as
+This repository implements a simple controller for running workload and watching SessionJob resources as
 defined with a CustomResourceDefinition (CRD).
 
 This particular example demonstrates how to perform basic Symphony client operations such as:
@@ -10,37 +10,16 @@ This particular example demonstrates how to perform basic Symphony client operat
 
 ## Details
 
-
-### Fetch with godep
-
-When NOT using go 1.11 modules, you can use the following commands.
-
-```sh
-go get -d k8s.io/sample-controller
-cd $GOPATH/src/k8s.io/sample-controller
-godep restore
-```
-
-### When using go 1.11 modules
-
-When using go 1.11 modules (`GO111MODULE=on`), issue the following
-commands --- starting in whatever working directory you like.
-
-```sh
-git clone https://github.com/kubernetes/sample-controller.git
-cd sample-controller
-```
-
 ## Running
 
 ```sh
 # deploy the FaaS sample in the Symhony client container and copy related files (input.txt myfunc.py) to folder /share. The FaaS package (https://www.ibm.com/support/knowledgecenter/SSZUMP_7.3.0/prototypes/faas_installing_linux.html) is only for 7.3 now, you need to update the version in the application profile.
 
 # assumes you have a working kubeconfig, not required if operating in-cluster
-go build -o sample-controller .
+go build -o sym-client-controller .
 
-# copy sample-controller sym.sh sym_monitor.sh into the /opt/ibm/sample-controller folder of the Symhony client container, grant 775 permission for the .sh files and then run
-./sample-controller
+# copy sym-client-controller sym.sh sym_monitor.sh into the /opt/ibm/sym-client-controller folder of the Symhony client container, grant 775 permission for the .sh files and then run
+./sym-client-controller
 
 # create a CustomResourceDefinition
 kubectl create -f artifacts/examples/crd-status-subresource.yaml
