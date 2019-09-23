@@ -36,7 +36,6 @@ cd sample-controller
 ```sh
 # deploy the FaaS sample in the Symhony client container and copy related files (input.txt myfunc.py) to folder /share. The FaaS package (https://www.ibm.com/support/knowledgecenter/SSZUMP_7.3.0/prototypes/faas_installing_linux.html) is only for 7.3 now, you need to update the version in the application profile.
 
-
 # assumes you have a working kubeconfig, not required if operating in-cluster
 go build -o sample-controller .
 
