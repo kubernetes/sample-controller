@@ -19,8 +19,8 @@ limitations under the License.
 package samplecontroller
 
 import (
-	internalinterfaces "k8s.io/sample-controller/pkg/generated/informers/externalversions/internalinterfaces"
-	v1alpha1 "k8s.io/sample-controller/pkg/generated/informers/externalversions/samplecontroller/v1alpha1"
+	internalinterfaces "k8s.io/k8s-sym-client-controller/pkg/generated/informers/externalversions/internalinterfaces"
+	v1alpha1 "k8s.io/k8s-sym-client-controller/pkg/generated/informers/externalversions/samplecontroller/v1alpha1"
 )
 
 // Interface provides access to each of this group's versions.

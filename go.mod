@@ -1,6 +1,6 @@
 // This is a generated file. Do not edit directly.
 
-module k8s.io/sample-controller
+module k8s.io/k8s-sym-client-controller
 
 go 1.12
 

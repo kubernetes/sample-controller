@@ -40,14 +40,14 @@ import (
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
 
-	samplev1alpha1 "k8s.io/sample-controller/pkg/apis/samplecontroller/v1alpha1"
-	clientset "k8s.io/sample-controller/pkg/generated/clientset/versioned"
-	samplescheme "k8s.io/sample-controller/pkg/generated/clientset/versioned/scheme"
-	informers "k8s.io/sample-controller/pkg/generated/informers/externalversions/samplecontroller/v1alpha1"
-	listers "k8s.io/sample-controller/pkg/generated/listers/samplecontroller/v1alpha1"
+	samplev1alpha1 "k8s.io/k8s-sym-client-controller/pkg/apis/samplecontroller/v1alpha1"
+	clientset "k8s.io/k8s-sym-client-controller/pkg/generated/clientset/versioned"
+	samplescheme "k8s.io/k8s-sym-client-controller/pkg/generated/clientset/versioned/scheme"
+	informers "k8s.io/k8s-sym-client-controller/pkg/generated/informers/externalversions/samplecontroller/v1alpha1"
+	listers "k8s.io/k8s-sym-client-controller/pkg/generated/listers/samplecontroller/v1alpha1"
 )
 
-const controllerAgentName = "sample-controller"
+const controllerAgentName = "k8s-sym-client-controller"
 
 const (
 	// SuccessSynced is used as part of the Event 'reason' when a SessionJob is synced
@@ -95,8 +95,8 @@ func NewController(
 	sessionjobInformer informers.SessionJobInformer) *Controller {
 
 	// Create event broadcaster
-	// Add sample-controller types to the default Kubernetes Scheme so Events can be
-	// logged for sample-controller types.
+	// Add k8s-sym-client-controller types to the default Kubernetes Scheme so Events can be
+	// logged for k8s-sym-client-controller types.
 	utilruntime.Must(samplescheme.AddToScheme(scheme.Scheme))
 	klog.V(4).Info("Creating event broadcaster")
 	eventBroadcaster := record.NewBroadcaster()

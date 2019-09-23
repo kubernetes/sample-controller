@@ -1,5 +1,5 @@
 {
-	"ImportPath": "k8s.io/sample-controller",
+	"ImportPath": "k8s.io/k8s-sym-client-controller",
 	"GoVersion": "unknown",
 	"GodepVersion": "gen-godeps",
 	"Packages": [

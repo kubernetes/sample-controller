@@ -24,7 +24,7 @@ import (
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
-	samplecontrollerv1alpha1 "k8s.io/sample-controller/pkg/apis/samplecontroller/v1alpha1"
+	samplecontrollerv1alpha1 "k8s.io/k8s-sym-client-controller/pkg/apis/samplecontroller/v1alpha1"
 )
 
 var scheme = runtime.NewScheme()

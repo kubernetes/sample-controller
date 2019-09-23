@@ -48,7 +48,7 @@ to create this. You will be using this reference for retrieving objects for
 later processing.
 
 The base controller in client-go provides the *NewIndexerInformer* function to create Informer and Indexer.
-In your code you can either [directly invoke this function](https://github.com/kubernetes/client-go/blob/master/examples/workqueue/main.go#L174) or [use factory methods for creating an informer.](https://github.com/kubernetes/sample-controller/blob/master/main.go#L61)
+In your code you can either [directly invoke this function](https://github.com/kubernetes/client-go/blob/master/examples/workqueue/main.go#L174) or [use factory methods for creating an informer.](https://github.com/kubernetes/k8s-sym-client-controller/blob/master/main.go#L61)
 
 * Resource Event Handlers: These are the callback functions which will be called by
 the Informer when it wants to deliver an object to your controller. The typical
