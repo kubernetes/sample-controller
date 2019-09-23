@@ -5,5 +5,6 @@ metadata:
 spec:
   deploymentName: example-sessionjob
   replicas: 1
-  taskCount: 120
-  taskRuntime: 15000
+  taskInput: /share/input.txt
+  taskOutput: /share/output.txt
+  taskFunction: /share/myfunc.py
