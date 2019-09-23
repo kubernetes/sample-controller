@@ -34,10 +34,12 @@ cd sample-controller
 ## Running
 
 ```sh
+# deploy the FaaS sample in the Symhony client container, the package (symFaaS-7.3.0.0_x86_64.tar.gz) is only for 7.3 now, you need to update the version in the application profile, copy related files (input.txt myfunc.py) to folder /share.
+
 # assumes you have a working kubeconfig, not required if operating in-cluster
 go build -o sample-controller .
 
-# copy sample-controller sym.sh sym_monitor.sh into the /tmp folder of a Symhony client container, grant 775 permission for the .sh files and then run
+# copy sample-controller sym.sh sym_monitor.sh into the /opt/ibm/sample-controller folder of the Symhony client container, grant 775 permission for the .sh files and then run
 ./sample-controller
 
 # create a CustomResourceDefinition
@@ -48,6 +50,20 @@ kubectl create -f artifacts/examples/example-sessionjob.yaml
 
 # check task status through the custom resource
 kubectl describe SessionJob
+
+Part of the result is like:
+
+Spec:
+  Deployment Name:  example-sessionjob
+  Replicas:         1
+  Task Function:    /share/myfunc.py
+  Task Input:       /share/input.txt
+  Task Output:      /share/output.txt
+Status:
+  Done Tasks:     100
+  Pending Tasks:  72
+  Running Tasks:  8
+
 ```
 
 ## Cleanup
