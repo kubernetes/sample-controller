@@ -281,7 +281,7 @@ func (c *Controller) syncHandler(key string) error {
 
 		//use the deployment as a flag, only run the client when the deployment is created.
 		//parameter := fmt.Sprintf("-m %d -r %d", *sessionjob.Spec.TaskCount, *sessionjob.Spec.TaskRuntime)
-		command := "/opt/ibm/sample-controller/sym.sh " + sessionjob.Spec.TaskInput + " " + sessionjob.Spec.TaskFunction + " " + sessionjob.Spec.TaskOutput
+		command := "/opt/ibm/sym-client-controller/sym.sh " + sessionjob.Spec.TaskInput + " " + sessionjob.Spec.TaskFunction + " " + sessionjob.Spec.TaskOutput
 		go func() {
 			cmd := exec.Command("/bin/bash", "-c", command)
 			_, err := cmd.Output()
@@ -340,7 +340,7 @@ func (c *Controller) updateSessionJobStatus(sessionjob *samplev1alpha1.SessionJo
 	sessionjobCopy := sessionjob.DeepCopy()
 	//sessionjobCopy.Status.AvailableReplicas = deployment.Status.AvailableReplicas
 
-	command := "/opt/ibm/sample-controller/sym_monitor.sh"
+	command := "/opt/ibm/sym-client-controller/sym_monitor.sh"
 	cmd := exec.Command("/bin/bash", "-c", command)
 	stdout, _ := cmd.StdoutPipe()
 	cmd.Start()
