@@ -5,6 +5,6 @@ metadata:
 spec:
   deploymentName: example-sessionjob
   replicas: 1
-  taskInput: /share/input.txt
-  taskOutput: /share/output.txt
-  taskFunction: /share/myfunc.py
+  taskInput: /shared/input.txt
+  taskOutput: /shared/output.txt
+  taskFunction: /shared/myfunc.py
