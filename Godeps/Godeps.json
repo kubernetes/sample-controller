@@ -232,11 +232,11 @@
 		},
 		{
 			"ImportPath": "github.com/onsi/ginkgo",
-			"Rev": "v1.8.0"
+			"Rev": "v1.10.1"
 		},
 		{
 			"ImportPath": "github.com/onsi/gomega",
-			"Rev": "v1.5.0"
+			"Rev": "v1.7.0"
 		},
 		{
 			"ImportPath": "github.com/peterbourgon/diskv",
@@ -368,15 +368,15 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "10e821c09743"
+			"Rev": "2e41325d9e4b"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "c930edf45883"
+			"Rev": "e71eb83a557c"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "a746c2f219b7"
+			"Rev": "b1fd78950135"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
