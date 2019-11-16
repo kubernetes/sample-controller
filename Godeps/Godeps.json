@@ -376,11 +376,11 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "f4e7d7f24368"
+			"Rev": "89d410bde4ec"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "a4c677cde034"
+			"Rev": "e7b5e74ed4e6"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
@@ -400,7 +400,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/utils",
-			"Rev": "2b95a09bc58d"
+			"Rev": "e782cd3c129f"
 		},
 		{
 			"ImportPath": "modernc.org/cc",
