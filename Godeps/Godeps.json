@@ -364,7 +364,7 @@
 		},
 		{
 			"ImportPath": "gopkg.in/yaml.v2",
-			"Rev": "v2.2.4"
+			"Rev": "v2.2.7"
 		},
 		{
 			"ImportPath": "honnef.co/go/tools",
@@ -372,19 +372,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "72223a9f9901"
+			"Rev": "49d983e9bac5"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "3253b0a30d67"
+			"Rev": "51168acb8295"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "1b1a35e41a57"
+			"Rev": "ea0a6e11838c"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "6b257a9d6f46"
+			"Rev": "3e153532b0d0"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
