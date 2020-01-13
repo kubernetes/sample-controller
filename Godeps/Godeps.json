@@ -55,6 +55,10 @@
 			"Rev": "de5bf2ad4578"
 		},
 		{
+			"ImportPath": "github.com/ajstarks/svgo",
+			"Rev": "644b8db467af"
+		},
+		{
 			"ImportPath": "github.com/client9/misspell",
 			"Rev": "v0.3.4"
 		},
@@ -81,6 +85,10 @@
 		{
 			"ImportPath": "github.com/evanphx/json-patch",
 			"Rev": "v4.2.0"
+		},
+		{
+			"ImportPath": "github.com/fogleman/gg",
+			"Rev": "0403632d5b90"
 		},
 		{
 			"ImportPath": "github.com/fsnotify/fsnotify",
@@ -113,6 +121,10 @@
 		{
 			"ImportPath": "github.com/gogo/protobuf",
 			"Rev": "65acae22fc9d"
+		},
+		{
+			"ImportPath": "github.com/golang/freetype",
+			"Rev": "e2365dfdc4a0"
 		},
 		{
 			"ImportPath": "github.com/golang/glog",
@@ -189,6 +201,10 @@
 		{
 			"ImportPath": "github.com/jstemmer/go-junit-report",
 			"Rev": "af01ea7f8024"
+		},
+		{
+			"ImportPath": "github.com/jung-kurt/gofpdf",
+			"Rev": "24315acbbda5"
 		},
 		{
 			"ImportPath": "github.com/kisielk/errcheck",
@@ -324,11 +340,15 @@
 		},
 		{
 			"ImportPath": "gonum.org/v1/gonum",
-			"Rev": "3d26580ed485"
+			"Rev": "v0.6.2"
 		},
 		{
 			"ImportPath": "gonum.org/v1/netlib",
 			"Rev": "76723241ea4e"
+		},
+		{
+			"ImportPath": "gonum.org/v1/plot",
+			"Rev": "e2840ee46a6b"
 		},
 		{
 			"ImportPath": "google.golang.org/api",
@@ -372,7 +392,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "49d983e9bac5"
+			"Rev": "530d314087d8"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
@@ -384,7 +404,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "3e153532b0d0"
+			"Rev": "0826954c61ed"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
@@ -421,6 +441,10 @@
 		{
 			"ImportPath": "modernc.org/xc",
 			"Rev": "v1.0.0"
+		},
+		{
+			"ImportPath": "rsc.io/pdf",
+			"Rev": "v0.1.1"
 		},
 		{
 			"ImportPath": "sigs.k8s.io/structured-merge-diff",
