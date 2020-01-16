@@ -68,7 +68,7 @@
 		},
 		{
 			"ImportPath": "github.com/elazarl/goproxy",
-			"Rev": "c4fc26588b6e"
+			"Rev": "947c36da3153"
 		},
 		{
 			"ImportPath": "github.com/emicklei/go-restful",
@@ -348,15 +348,15 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "3946df5ca773"
+			"Rev": "9bd6c7846cc9"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "c76d55892ea2"
+			"Rev": "fb4ce0f53438"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "ded4aaa1cc04"
+			"Rev": "1aa326d7304e"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
