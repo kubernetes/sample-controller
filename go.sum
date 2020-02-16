@@ -196,6 +196,7 @@ gopkg.in/yaml.v2 v2.2.8/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
 honnef.co/go/tools v0.0.0-20190102054323-c2f93a96b099/go.mod h1:rf3lG4BRIbNafJWhAfAdb/ePZxsR/4RtNHQocxwk9r4=
 honnef.co/go/tools v0.0.0-20190106161140-3f1c8253044a/go.mod h1:rf3lG4BRIbNafJWhAfAdb/ePZxsR/4RtNHQocxwk9r4=
 k8s.io/api v0.0.0-20200214081623-ecbd4af0fc33/go.mod h1:c7Gj97BIMy7e7IXmy8cSbdbslZ9VzHhnFLqeO+gZCKE=
+k8s.io/apimachinery v0.0.0-20200214081019-7490b3ed6e92 h1:LyozpD1xHYBURrbAdrLCfOzsuidg06BXeptuvqkHEp0=
 k8s.io/apimachinery v0.0.0-20200214081019-7490b3ed6e92/go.mod h1:5X8oEhnd931nEg6/Nkumo00nT6ZsCLp2h7Xwd7Ym6P4=
 k8s.io/client-go v0.0.0-20200214082307-e38a84523341/go.mod h1:Tsf+DR+IpUALeI0vaFq+tegL+a03YeXHKSM9/MXUk7o=
 k8s.io/code-generator v0.0.0-20200214080538-dc8f3adce97c/go.mod h1:+UHX5rSbxmR8kzS+FAv7um6dtYrZokQvjHpDSYRVkTc=
