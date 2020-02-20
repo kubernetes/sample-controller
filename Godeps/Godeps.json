@@ -264,7 +264,7 @@
 		},
 		{
 			"ImportPath": "golang.org/x/crypto",
-			"Rev": "60c769a6c586"
+			"Rev": "bac4c82f6975"
 		},
 		{
 			"ImportPath": "golang.org/x/exp",
@@ -348,15 +348,15 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "ecbd4af0fc33"
+			"Rev": "026463abc787"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "7490b3ed6e92"
+			"Rev": "2373d029717c"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "e38a84523341"
+			"Rev": "cb2a0501818e"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
