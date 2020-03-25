@@ -356,7 +356,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "3e3c7a420997"
+			"Rev": "dc8515ba9674"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
@@ -376,7 +376,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/utils",
-			"Rev": "327a8059b905"
+			"Rev": "a9aa75ae1b89"
 		},
 		{
 			"ImportPath": "sigs.k8s.io/structured-merge-diff/v3",
