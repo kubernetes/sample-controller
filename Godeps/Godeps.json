@@ -67,6 +67,10 @@
 			"Rev": "449fdfce4d96"
 		},
 		{
+			"ImportPath": "github.com/docopt/docopt-go",
+			"Rev": "ee0de3bc6815"
+		},
+		{
 			"ImportPath": "github.com/elazarl/goproxy",
 			"Rev": "947c36da3153"
 		},
@@ -124,7 +128,7 @@
 		},
 		{
 			"ImportPath": "github.com/golang/protobuf",
-			"Rev": "v1.3.2"
+			"Rev": "v1.3.3"
 		},
 		{
 			"ImportPath": "github.com/google/btree",
@@ -156,7 +160,7 @@
 		},
 		{
 			"ImportPath": "github.com/googleapis/gnostic",
-			"Rev": "v0.1.0"
+			"Rev": "v0.4.1"
 		},
 		{
 			"ImportPath": "github.com/gregjones/httpcache",
@@ -272,7 +276,7 @@
 		},
 		{
 			"ImportPath": "golang.org/x/net",
-			"Rev": "16171245cfb2"
+			"Rev": "d3edc9973b7e"
 		},
 		{
 			"ImportPath": "golang.org/x/oauth2",
@@ -344,19 +348,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "b5bd82427fa8"
+			"Rev": "fa879b399cd0"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "e92250ad09d8"
+			"Rev": "fa0d5bf06730"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "6240434e1ad6"
+			"Rev": "7039b495eb3e"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "24eba7841593"
+			"Rev": "804a58607501"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
@@ -368,7 +372,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/kube-openapi",
-			"Rev": "bf4fb3bd569c"
+			"Rev": "01dfbe2eec3d"
 		},
 		{
 			"ImportPath": "k8s.io/utils",
