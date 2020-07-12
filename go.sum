@@ -128,8 +128,8 @@ github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:
 github.com/imdario/mergo v0.3.5 h1:JboBksRwiiAJWvIYJVo46AfV+IAIKZpfrSzVKj42R4Q=
 github.com/imdario/mergo v0.3.5/go.mod h1:2EnlNZ0deacrJVfApfmtdGgDfMuh/nq6Ok1EcJh5FfA=
 github.com/json-iterator/go v1.1.6/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCVDaaPEHmU=
-github.com/json-iterator/go v1.1.9 h1:9yzud/Ht36ygwatGx56VwCZtlI/2AD15T1X2sjSuGns=
-github.com/json-iterator/go v1.1.9/go.mod h1:KdQUCv79m/52Kvf8AW2vK1V8akMuk1QjK/uOdHXbAo4=
+github.com/json-iterator/go v1.1.10 h1:Kz6Cvnvv2wGdaG/V8yMvfkmNiXq9Ya2KUv4rouJJr68=
+github.com/json-iterator/go v1.1.10/go.mod h1:KdQUCv79m/52Kvf8AW2vK1V8akMuk1QjK/uOdHXbAo4=
 github.com/jstemmer/go-junit-report v0.0.0-20190106144839-af01ea7f8024/go.mod h1:6v2b51hI/fHJwM22ozAgKL4VKDeJcHhJFhtBdhmNjmU=
 github.com/jstemmer/go-junit-report v0.9.1/go.mod h1:Brl9GWCQeLvo8nXZwPNNblvFj/XSXhF0NWZEnDohbsk=
 github.com/kisielk/errcheck v1.2.0/go.mod h1:/BMXB+zMLi60iA8Vv6Ksmxu/1UDYcXs4uQLJ+jE2L00=
@@ -345,10 +345,10 @@ honnef.co/go/tools v0.0.0-20190106161140-3f1c8253044a/go.mod h1:rf3lG4BRIbNafJWh
 honnef.co/go/tools v0.0.0-20190418001031-e561f6794a2a/go.mod h1:rf3lG4BRIbNafJWhAfAdb/ePZxsR/4RtNHQocxwk9r4=
 honnef.co/go/tools v0.0.0-20190523083050-ea95bdfd59fc/go.mod h1:rf3lG4BRIbNafJWhAfAdb/ePZxsR/4RtNHQocxwk9r4=
 honnef.co/go/tools v0.0.1-2019.2.3/go.mod h1:a3bituU0lyd329TUQxRnasdCoJDkEUEAqEt0JzvZhAg=
-k8s.io/api v0.0.0-20200711010759-67a68481e276/go.mod h1:x0ZnvSZqabCH9lfDzYQVDUpIhJCLTnfTXruGmRCMI+A=
-k8s.io/apimachinery v0.0.0-20200711010416-8e134319f815/go.mod h1:o7dnTWWI581t2mphuLR3towX6xooze3sUXgNRWLd3Cw=
-k8s.io/client-go v0.0.0-20200711011223-16621f64440c/go.mod h1:LDsbtsZg5daD4TayUEm3PqPDGiB/lbkKH6rw136WNM4=
-k8s.io/code-generator v0.0.0-20200711010124-cf20b2fb095c/go.mod h1:9w314dZncjv/zcv1Qvm7eXiAW3bh6BgMUrhZSSpdMgM=
+k8s.io/api v0.0.0-20200713130235-be360156aa6a/go.mod h1:7a4Es5f8qLSh2S2PUf3gP8NdtZFhLKve7TRsSopUcwU=
+k8s.io/apimachinery v0.0.0-20200713125709-8e7d6bb9bd6d/go.mod h1:eHbWZVMaaewmYBAUuRYnAmTTMtDhvpPNZuh8/6Yl7v0=
+k8s.io/client-go v0.0.0-20200713130841-505a1f443178/go.mod h1:4DeUSdsqcLMsCjohGuc0/AzpQDCDYsgjd7oq0vlmFQY=
+k8s.io/code-generator v0.0.0-20200713125319-9193f19eab49/go.mod h1:uR3gwQvtcOjBrvwXhFF1lw5kq9BOOAfSKl/pZZ1zW3I=
 k8s.io/gengo v0.0.0-20200413195148-3a45101e95ac/go.mod h1:ezvh/TsK7cY6rbqRK0oQQ8IAqLxYwwyPxAX1Pzy0ii0=
 k8s.io/gengo v0.0.0-20200428234225-8167cfdcfc14 h1:t4L10Qfx/p7ASH3gXCdIUtPbbIuegCoUJf3TMSFekjw=
 k8s.io/gengo v0.0.0-20200428234225-8167cfdcfc14/go.mod h1:ezvh/TsK7cY6rbqRK0oQQ8IAqLxYwwyPxAX1Pzy0ii0=
