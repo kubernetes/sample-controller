@@ -79,6 +79,10 @@
 			"Rev": "de5bf2ad4578"
 		},
 		{
+			"ImportPath": "github.com/asaskevich/govalidator",
+			"Rev": "f61b66f89f4a"
+		},
+		{
 			"ImportPath": "github.com/census-instrumentation/opencensus-proto",
 			"Rev": "v0.2.1"
 		},
@@ -279,6 +283,10 @@
 			"Rev": "v0.7.0"
 		},
 		{
+			"ImportPath": "github.com/mitchellh/mapstructure",
+			"Rev": "v1.1.2"
+		},
+		{
 			"ImportPath": "github.com/modern-go/concurrent",
 			"Rev": "bacd9c7ef1dd"
 		},
@@ -452,19 +460,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "3e589e9d21e6"
+			"Rev": "8519c5ea4619"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "d67967d70958"
+			"Rev": "a787aaf5a782"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "a2cda5636dc9"
+			"Rev": "bef66adadf9a"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "3609764c976f"
+			"Rev": "ed440de59c89"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
@@ -476,7 +484,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/kube-openapi",
-			"Rev": "8b5066479488"
+			"Rev": "74b467f3a622"
 		},
 		{
 			"ImportPath": "k8s.io/utils",
@@ -488,7 +496,7 @@
 		},
 		{
 			"ImportPath": "sigs.k8s.io/structured-merge-diff/v4",
-			"Rev": "b3cf1e8ff931"
+			"Rev": "v4.0.2"
 		},
 		{
 			"ImportPath": "sigs.k8s.io/yaml",
