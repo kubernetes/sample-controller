@@ -36,7 +36,7 @@
 		},
 		{
 			"ImportPath": "github.com/Azure/go-autorest/autorest",
-			"Rev": "v0.11.1"
+			"Rev": "v0.11.12"
 		},
 		{
 			"ImportPath": "github.com/Azure/go-autorest/autorest/adal",
@@ -105,10 +105,6 @@
 		{
 			"ImportPath": "github.com/davecgh/go-spew",
 			"Rev": "v1.1.1"
-		},
-		{
-			"ImportPath": "github.com/dgrijalva/jwt-go",
-			"Rev": "v3.2.0"
 		},
 		{
 			"ImportPath": "github.com/docker/spdystream",
@@ -468,19 +464,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "4a626d306b98"
+			"Rev": "fcac651617f2"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "859536f6dc9b"
+			"Rev": "15c5dba13c59"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "77eda6a9395b"
+			"Rev": "0964d4be7536"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "0843e0f44fb3"
+			"Rev": "8cc0d294774b"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
