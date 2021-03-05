@@ -139,10 +139,6 @@
 			"Rev": "v1.4.7"
 		},
 		{
-			"ImportPath": "github.com/ghodss/yaml",
-			"Rev": "73d445a93680"
-		},
-		{
 			"ImportPath": "github.com/go-gl/glfw",
 			"Rev": "e6da0acd62b1"
 		},
@@ -472,19 +468,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "9a813edcaca0"
+			"Rev": "3687c906b8c9"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "317ebe7c2dbd"
+			"Rev": "283a3268598b"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "a33729487127"
+			"Rev": "1745c9faaaff"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "748252d1b6f4"
+			"Rev": "cc2553e427ca"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
@@ -496,7 +492,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/kube-openapi",
-			"Rev": "d219536bb9fd"
+			"Rev": "591a79e4bda7"
 		},
 		{
 			"ImportPath": "k8s.io/utils",
