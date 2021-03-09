@@ -103,6 +103,10 @@
 			"Rev": "v0.3.4"
 		},
 		{
+			"ImportPath": "github.com/creack/pty",
+			"Rev": "v1.1.9"
+		},
+		{
 			"ImportPath": "github.com/davecgh/go-spew",
 			"Rev": "v1.1.1"
 		},
@@ -160,7 +164,7 @@
 		},
 		{
 			"ImportPath": "github.com/go-openapi/spec",
-			"Rev": "v0.19.3"
+			"Rev": "v0.19.5"
 		},
 		{
 			"ImportPath": "github.com/go-openapi/swag",
@@ -272,7 +276,7 @@
 		},
 		{
 			"ImportPath": "github.com/kr/text",
-			"Rev": "v0.1.0"
+			"Rev": "v0.2.0"
 		},
 		{
 			"ImportPath": "github.com/mailru/easyjson",
@@ -301,6 +305,10 @@
 		{
 			"ImportPath": "github.com/mxk/go-flowrate",
 			"Rev": "cca7078d478f"
+		},
+		{
+			"ImportPath": "github.com/niemeyer/pretty",
+			"Rev": "a10e7caefd8e"
 		},
 		{
 			"ImportPath": "github.com/onsi/ginkgo",
@@ -436,7 +444,7 @@
 		},
 		{
 			"ImportPath": "gopkg.in/check.v1",
-			"Rev": "41f04d3bba15"
+			"Rev": "8fa46927fb4f"
 		},
 		{
 			"ImportPath": "gopkg.in/errgo.v2",
@@ -456,7 +464,7 @@
 		},
 		{
 			"ImportPath": "gopkg.in/yaml.v2",
-			"Rev": "v2.2.8"
+			"Rev": "v2.4.0"
 		},
 		{
 			"ImportPath": "gopkg.in/yaml.v3",
@@ -468,19 +476,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "3687c906b8c9"
+			"Rev": "a61f0c601351"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "283a3268598b"
+			"Rev": "79c4f8795d25"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "1745c9faaaff"
+			"Rev": "57d5462f1c4c"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "cc2553e427ca"
+			"Rev": "24be182ad6d3"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
