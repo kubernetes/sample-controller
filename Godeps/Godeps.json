@@ -444,19 +444,19 @@
 		},
 		{
 			"ImportPath": "k8s.io/api",
-			"Rev": "60680b5087d3"
+			"Rev": "v0.19.12-rc.0"
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "0c7db653e2b6"
+			"Rev": "v0.19.12-rc.0"
 		},
 		{
 			"ImportPath": "k8s.io/client-go",
-			"Rev": "8b9f5901612d"
+			"Rev": "v0.19.12-rc.0"
 		},
 		{
 			"ImportPath": "k8s.io/code-generator",
-			"Rev": "f7420a43c25d"
+			"Rev": "v0.19.12-rc.0"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
