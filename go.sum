@@ -211,6 +211,8 @@ github.com/modern-go/reflect2 v1.0.1/go.mod h1:bx2lNnkwVCuqBIxFjflWJWanXIb3Rllmb
 github.com/modern-go/reflect2 v1.0.2 h1:xBagoLtFs94CBntxluKeaWgTMpvLxC4ur3nMaC9Gz0M=
 github.com/modern-go/reflect2 v1.0.2/go.mod h1:yWuevngMOJpCy52FWWMvUC8ws7m/LJsjYzDa0/r8luk=
 github.com/munnerz/goautoneg v0.0.0-20120707110453-a547fc61f48d/go.mod h1:+n7T8mK8HuQTcFwEeznm/DIxMOiR9yIdICNftLE1DvQ=
+github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 h1:C3w9PqII01/Oq1c1nUAm88MOHcQC9l5mIlSMApZMrHA=
+github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822/go.mod h1:+n7T8mK8HuQTcFwEeznm/DIxMOiR9yIdICNftLE1DvQ=
 github.com/mxk/go-flowrate v0.0.0-20140419014527-cca7078d478f/go.mod h1:ZdcZmHo+o7JKHSa8/e818NopupXU1YMK5fe1lsApnBw=
 github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e h1:fD57ERR4JtEqsWbfPhv4DMiApHyliiK5xCTNVSPiaAs=
 github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e/go.mod h1:zD1mROLANZcx1PVRCS0qkT7pwLkGfwJo4zjcN/Tysno=
@@ -618,14 +620,6 @@ honnef.co/go/tools v0.0.0-20190523083050-ea95bdfd59fc/go.mod h1:rf3lG4BRIbNafJWh
 honnef.co/go/tools v0.0.1-2019.2.3/go.mod h1:a3bituU0lyd329TUQxRnasdCoJDkEUEAqEt0JzvZhAg=
 honnef.co/go/tools v0.0.1-2020.1.3/go.mod h1:X/FiERA/W4tHapMX5mGpAtMSVEeEUOyHaw9vFzvIQ3k=
 honnef.co/go/tools v0.0.1-2020.1.4/go.mod h1:X/FiERA/W4tHapMX5mGpAtMSVEeEUOyHaw9vFzvIQ3k=
-k8s.io/api v0.0.0-20220327010943-9431395a90d0 h1:X+CjFuKiWUYmXxuNueT2v0YNHDZhiRJ0389k24Fh1cg=
-k8s.io/api v0.0.0-20220327010943-9431395a90d0/go.mod h1:OHmmfP+B0EkV7rltm6KDhsy7UJUjc3nPo97jKZwLIkM=
-k8s.io/apimachinery v0.0.0-20220327010739-4d8ad187e0a0 h1:vZrBcVfdctsRfR+SUOLUmY4+eU4FOnRIpsx03xNPqJ8=
-k8s.io/apimachinery v0.0.0-20220327010739-4d8ad187e0a0/go.mod h1:WkN7hnr/sIpKTK8v3BZKqLkdqTMz00TBdMWqE0M0O7Q=
-k8s.io/client-go v0.0.0-20220327011239-402aa66c5cad h1:v2udgOBdg/+3kM7nGJtQfjvnlsjgA0wdR9sJjiX7UfQ=
-k8s.io/client-go v0.0.0-20220327011239-402aa66c5cad/go.mod h1:HCq7QlEN/lEZ7hg4X9ldPo4rbktT3jtB83/5IJmurlw=
-k8s.io/code-generator v0.0.0-20220327010549-a207ba43f29b h1:/W7LKW7INcyQg+4t9MiVKiAcNEfcEJKr3GNFwJTXwaM=
-k8s.io/code-generator v0.0.0-20220327010549-a207ba43f29b/go.mod h1:K+f3PS8AJPkGO9NJoAqq6J1NMsr37Ey1IaQrQ2c97yQ=
 k8s.io/gengo v0.0.0-20210813121822-485abfe95c7c/go.mod h1:FiNAH4ZV3gBg2Kwh89tzAEV2be7d5xI0vBa/VySYy3E=
 k8s.io/gengo v0.0.0-20211129171323-c02415ce4185 h1:TT1WdmqqXareKxZ/oNXEUSwKlLiHzPMyB0t8BaFeBYI=
 k8s.io/gengo v0.0.0-20211129171323-c02415ce4185/go.mod h1:FiNAH4ZV3gBg2Kwh89tzAEV2be7d5xI0vBa/VySYy3E=
