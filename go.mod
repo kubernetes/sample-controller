@@ -7,8 +7,8 @@ go 1.19
 require (
 	k8s.io/api v0.0.0-20220909223647-30ff9916664f
 	k8s.io/apimachinery v0.0.0-20220909223208-6d854d747c21
-	k8s.io/client-go v0.0.0-20220909224245-ab826d2728f3
-	k8s.io/code-generator v0.0.0-20220909222852-c3fdc3ca70f8
+	k8s.io/client-go v0.0.0-20220913183650-18c3338d487f
+	k8s.io/code-generator v0.0.0-20220913182912-2e5cca781290
 	k8s.io/klog/v2 v2.80.1
 )
 
@@ -61,6 +61,6 @@ require (
 replace (
 	k8s.io/api => k8s.io/api v0.0.0-20220909223647-30ff9916664f
 	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20220909223208-6d854d747c21
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20220909224245-ab826d2728f3
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20220909222852-c3fdc3ca70f8
+	k8s.io/client-go => k8s.io/client-go v0.0.0-20220913183650-18c3338d487f
+	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20220913182912-2e5cca781290
 )
