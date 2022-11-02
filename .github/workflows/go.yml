@@ -1,0 +1,22 @@
+name: Go
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-go@v3
+      with:
+        go-version-file: go.mod
+        cache: true
+    - name: Mod
+      run: go mod download
+    - name: Build
+      run: go build -o myApp .
+    - name: Test
+      run: go test ./... -v
