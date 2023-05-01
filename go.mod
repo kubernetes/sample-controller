@@ -5,10 +5,10 @@ module k8s.io/sample-controller
 go 1.20
 
 require (
-	k8s.io/api v0.0.0-20230501174425-14796d1f9020
-	k8s.io/apimachinery v0.0.0-20230501093353-d563c9729062
-	k8s.io/client-go v0.0.0-20230501175051-741627a2eb97
-	k8s.io/code-generator v0.0.0-20230501155018-9b6e38cd137b
+	k8s.io/api v0.0.0
+	k8s.io/apimachinery v0.0.0
+	k8s.io/client-go v0.0.0
+	k8s.io/code-generator v0.0.0
 	k8s.io/klog/v2 v2.90.1
 )
 
@@ -50,7 +50,7 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	k8s.io/gengo v0.0.0-20220902162205-c0856e24416d // indirect
-	k8s.io/kube-openapi v0.0.0-20230308215209-15aac26d736a // indirect
+	k8s.io/kube-openapi v0.0.0-20230501164219-8b0f38b5fd1f // indirect
 	k8s.io/utils v0.0.0-20230209194617-a36077c30491 // indirect
 	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
@@ -58,8 +58,9 @@ require (
 )
 
 replace (
-	k8s.io/api => k8s.io/api v0.0.0-20230501174425-14796d1f9020
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20230501093353-d563c9729062
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20230501175051-741627a2eb97
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20230501155018-9b6e38cd137b
+	k8s.io/api => ../api
+	k8s.io/apimachinery => ../apimachinery
+	k8s.io/client-go => ../client-go
+	k8s.io/code-generator => ../code-generator
+	k8s.io/sample-controller => ../sample-controller
 )
