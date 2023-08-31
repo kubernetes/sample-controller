@@ -5,17 +5,17 @@ module k8s.io/sample-controller
 go 1.20
 
 require (
-	k8s.io/api v0.0.0-20230829154641-e4c14aa9116e
-	k8s.io/apimachinery v0.0.0-20230829153926-1629459297c7
-	k8s.io/client-go v0.0.0-20230829155512-fb2e66896540
-	k8s.io/code-generator v0.0.0-20230829153205-3ba1295f0ae7
+	k8s.io/api v0.0.0
+	k8s.io/apimachinery v0.0.0
+	k8s.io/client-go v0.0.0
+	k8s.io/code-generator v0.0.0
 	k8s.io/klog/v2 v2.100.1
 )
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/emicklei/go-restful/v3 v3.9.0 // indirect
-	github.com/evanphx/json-patch v5.6.0+incompatible // indirect
+	github.com/evanphx/json-patch v4.12.0+incompatible // indirect
 	github.com/go-logr/logr v1.2.4 // indirect
 	github.com/go-openapi/jsonpointer v0.19.6 // indirect
 	github.com/go-openapi/jsonreference v0.20.2 // indirect
@@ -45,7 +45,7 @@ require (
 	golang.org/x/time v0.3.0 // indirect
 	golang.org/x/tools v0.8.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/protobuf v1.31.0 // indirect
+	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
@@ -58,8 +58,9 @@ require (
 )
 
 replace (
-	k8s.io/api => k8s.io/api v0.0.0-20230829154641-e4c14aa9116e
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20230829153926-1629459297c7
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20230829155512-fb2e66896540
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20230829153205-3ba1295f0ae7
+	k8s.io/api => ../api
+	k8s.io/apimachinery => ../apimachinery
+	k8s.io/client-go => ../client-go
+	k8s.io/code-generator => ../code-generator
+	k8s.io/sample-controller => ../sample-controller
 )
