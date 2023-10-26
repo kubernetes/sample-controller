@@ -6,10 +6,10 @@ go 1.21.3
 
 require (
 	golang.org/x/time v0.3.0
-	k8s.io/api v0.0.0-20231026091235-25009ae79765
-	k8s.io/apimachinery v0.0.0-20231026091025-0785eb2fbd30
-	k8s.io/client-go v0.0.0-20231026091529-4028f5ba6e18
-	k8s.io/code-generator v0.0.0-20231026090828-f0a605abe6c7
+	k8s.io/api v0.0.0
+	k8s.io/apimachinery v0.0.0
+	k8s.io/client-go v0.0.0
+	k8s.io/code-generator v0.0.0
 	k8s.io/klog/v2 v2.100.1
 )
 
@@ -25,7 +25,7 @@ require (
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/gnostic-models v0.6.8 // indirect
-	github.com/google/go-cmp v0.5.9 // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/imdario/mergo v0.3.6 // indirect
@@ -58,8 +58,9 @@ require (
 )
 
 replace (
-	k8s.io/api => k8s.io/api v0.0.0-20231026091235-25009ae79765
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20231026091025-0785eb2fbd30
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20231026091529-4028f5ba6e18
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20231026090828-f0a605abe6c7
+	k8s.io/api => ../api
+	k8s.io/apimachinery => ../apimachinery
+	k8s.io/client-go => ../client-go
+	k8s.io/code-generator => ../code-generator
+	k8s.io/sample-controller => ../sample-controller
 )
