@@ -5,10 +5,10 @@ module k8s.io/sample-controller
 go 1.20
 
 require (
-	k8s.io/api v0.0.0-20231101131934-03c3aa1e3102
-	k8s.io/apimachinery v0.0.0-20231101131425-467db0e39959
-	k8s.io/client-go v0.0.0-20231101133235-5d61830cbc25
-	k8s.io/code-generator v0.0.0-20231101131002-9e9a63acb79e
+	k8s.io/api v0.27.8
+	k8s.io/apimachinery v0.27.8
+	k8s.io/client-go v0.27.8
+	k8s.io/code-generator v0.27.8
 	k8s.io/klog/v2 v2.90.1
 )
 
@@ -58,8 +58,8 @@ require (
 )
 
 replace (
-	k8s.io/api => k8s.io/api v0.0.0-20231101131934-03c3aa1e3102
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20231101131425-467db0e39959
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20231101133235-5d61830cbc25
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20231101131002-9e9a63acb79e
+	k8s.io/api => k8s.io/api v0.27.8
+	k8s.io/apimachinery => k8s.io/apimachinery v0.27.8
+	k8s.io/client-go => k8s.io/client-go v0.27.8
+	k8s.io/code-generator => k8s.io/code-generator v0.27.8
 )
