@@ -18,6 +18,7 @@ package main
 
 import (
 	"flag"
+	"net/http"
 	"time"
 
 	kubeinformers "k8s.io/client-go/informers"
@@ -37,6 +38,29 @@ var (
 	kubeconfig string
 )
 
+type customRoundTripper struct {
+	rt http.RoundTripper
+}
+
+// RoundTrip executes a single HTTP transaction and adds a custom header
+func (crt *customRoundTripper) RoundTrip(req *http.Request) (*http.Response, error) {
+	ctx := req.Context()
+
+	// Now you can use ctx as needed, for example:
+	// - To check for cancellation
+	// - To get values stored in the context
+	// (Remember that you should not modify the context)
+	rsv := ctx.Value("ResourceVersion")
+	// fmt.Println("ResourceVersion:",rsv)
+	// Add your custom header here
+	if rsv !=nil {
+		req.Header.Add("keploy-header", rsv.(string))
+	}
+	
+	// Then proceed with the original RoundTripper
+	return crt.rt.RoundTrip(req)
+}
+
 func main() {
 	klog.InitFlags(nil)
 	flag.Parse()
@@ -51,11 +75,19 @@ func main() {
 		klog.FlushAndExit(klog.ExitFlushTimeout, 1)
 	}
 
+	cfg.Insecure = true
+
+	// Set the WrapTransport function to customize the http.Client
+	cfg.WrapTransport = func(rt http.RoundTripper) http.RoundTripper {
+		return &customRoundTripper{rt: rt}
+	}
+
 	kubeClient, err := kubernetes.NewForConfig(cfg)
 	if err != nil {
 		logger.Error(err, "Error building kubernetes clientset")
 		klog.FlushAndExit(klog.ExitFlushTimeout, 1)
 	}
+	// Wrap the original RoundTripper with your custom RoundTripper
 
 	exampleClient, err := clientset.NewForConfig(cfg)
 	if err != nil {
