@@ -6,10 +6,10 @@ go 1.21
 
 require (
 	golang.org/x/time v0.3.0
-	k8s.io/api v0.0.0-20231220091747-b3fafe75341f
-	k8s.io/apimachinery v0.0.0-20231220091526-8bd2c20b5393
-	k8s.io/client-go v0.0.0-20231220092110-96e9c8d6f10a
-	k8s.io/code-generator v0.0.0-20231220091315-863bb0f08b52
+	k8s.io/api v0.0.0
+	k8s.io/apimachinery v0.0.0
+	k8s.io/client-go v0.0.0
+	k8s.io/code-generator v0.0.0
 	k8s.io/klog/v2 v2.110.1
 )
 
@@ -37,13 +37,13 @@ require (
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
-	golang.org/x/mod v0.13.0 // indirect
-	golang.org/x/net v0.17.0 // indirect
+	golang.org/x/mod v0.14.0 // indirect
+	golang.org/x/net v0.19.0 // indirect
 	golang.org/x/oauth2 v0.10.0 // indirect
-	golang.org/x/sys v0.14.0 // indirect
-	golang.org/x/term v0.13.0 // indirect
-	golang.org/x/text v0.13.0 // indirect
-	golang.org/x/tools v0.14.0 // indirect
+	golang.org/x/sys v0.15.0 // indirect
+	golang.org/x/term v0.15.0 // indirect
+	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/tools v0.16.1 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
@@ -58,8 +58,9 @@ require (
 )
 
 replace (
-	k8s.io/api => k8s.io/api v0.0.0-20231220091747-b3fafe75341f
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20231220091526-8bd2c20b5393
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20231220092110-96e9c8d6f10a
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20231220091315-863bb0f08b52
+	k8s.io/api => ../api
+	k8s.io/apimachinery => ../apimachinery
+	k8s.io/client-go => ../client-go
+	k8s.io/code-generator => ../code-generator
+	k8s.io/sample-controller => ../sample-controller
 )
