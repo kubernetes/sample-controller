@@ -6,10 +6,10 @@ go 1.21
 
 require (
 	golang.org/x/time v0.3.0
-	k8s.io/api v0.0.0-20240313000607-f98a50355b81
-	k8s.io/apimachinery v0.0.0-20240312235255-d794766488ac
-	k8s.io/client-go v0.0.0-20240313002401-403b37f3ba57
-	k8s.io/code-generator v0.0.0-20240313003814-867d3ef3e448
+	k8s.io/api v0.29.3
+	k8s.io/apimachinery v0.29.3
+	k8s.io/client-go v0.29.3
+	k8s.io/code-generator v0.29.3
 	k8s.io/klog/v2 v2.110.1
 )
 
@@ -58,8 +58,8 @@ require (
 )
 
 replace (
-	k8s.io/api => k8s.io/api v0.0.0-20240313000607-f98a50355b81
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20240312235255-d794766488ac
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20240313002401-403b37f3ba57
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20240313003814-867d3ef3e448
+	k8s.io/api => k8s.io/api v0.29.3
+	k8s.io/apimachinery => k8s.io/apimachinery v0.29.3
+	k8s.io/client-go => k8s.io/client-go v0.29.3
+	k8s.io/code-generator => k8s.io/code-generator v0.29.3
 )
