@@ -56,10 +56,3 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
-
-replace (
-	k8s.io/api => k8s.io/api v0.0.0-20240306165540-05aa4bceed70
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20240306164812-cbfe0a1feaa5
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20240306170515-0cdc0ce850af
-	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20240306171749-c9df80eb5e54
-)
