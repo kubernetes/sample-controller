@@ -7,8 +7,8 @@ go 1.22.0
 require (
 	golang.org/x/time v0.3.0
 	k8s.io/api v0.0.0-20240531003526-c114cd746b5a
-	k8s.io/apimachinery v0.0.0-20240530220031-733a95eb52c3
-	k8s.io/client-go v0.0.0-20240531003927-52e5651101ed
+	k8s.io/apimachinery v0.0.0-20240603234208-703232ea6da4
+	k8s.io/client-go v0.0.0-20240604003933-7c6e307a725f
 	k8s.io/code-generator v0.0.0-20240531004635-2ec7af029e9a
 	k8s.io/klog/v2 v2.120.1
 )
