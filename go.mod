@@ -6,10 +6,10 @@ go 1.22.0
 
 require (
 	golang.org/x/time v0.3.0
-	k8s.io/api v0.0.0
-	k8s.io/apimachinery v0.0.0
-	k8s.io/client-go v0.0.0
-	k8s.io/code-generator v0.0.0
+	k8s.io/api v0.0.0-20240827233010-7ac1f767816d
+	k8s.io/apimachinery v0.0.0-20240827232741-2465dc5239ab
+	k8s.io/client-go v0.0.0-20240827233326-dec9eaa92fde
+	k8s.io/code-generator v0.0.0-20240827234141-4b01f8974f91
 	k8s.io/klog/v2 v2.130.1
 )
 
@@ -57,12 +57,4 @@ require (
 	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
-)
-
-replace (
-	k8s.io/api => ../api
-	k8s.io/apimachinery => ../apimachinery
-	k8s.io/client-go => ../client-go
-	k8s.io/code-generator => ../code-generator
-	k8s.io/sample-controller => ../sample-controller
 )
