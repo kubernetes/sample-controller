@@ -10,10 +10,10 @@ godebug winsymlink=0
 
 require (
 	golang.org/x/time v0.7.0
-	k8s.io/api v0.0.0-20250117201903-3bed2589d43a
-	k8s.io/apimachinery v0.0.0-20250117041610-45d29dc4d66f
-	k8s.io/client-go v0.0.0-20250122202702-3617101e66f4
-	k8s.io/code-generator v0.0.0-20250122204510-e7e5741e3a3e
+	k8s.io/api v0.0.0-20250205124818-68351e3d8f2c
+	k8s.io/apimachinery v0.0.0-20250207124601-12352425f4c6
+	k8s.io/client-go v0.0.0-20250207125524-07d61b66a66d
+	k8s.io/code-generator v0.0.0-20250207130649-f7b5ad15219c
 	k8s.io/klog/v2 v2.130.1
 )
 
