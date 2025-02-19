@@ -10,10 +10,10 @@ godebug winsymlink=0
 
 require (
 	golang.org/x/time v0.7.0
-	k8s.io/api v0.0.0
-	k8s.io/apimachinery v0.0.0
-	k8s.io/client-go v0.0.0
-	k8s.io/code-generator v0.0.0
+	k8s.io/api v0.0.0-20250218234707-8ce7fe8996bd
+	k8s.io/apimachinery v0.0.0-20250214214420-47e7fa9a40a2
+	k8s.io/client-go v0.0.0-20250219035121-72c2d4d41534
+	k8s.io/code-generator v0.0.0-20250211120344-47286fcaaaaa
 	k8s.io/klog/v2 v2.130.1
 )
 
@@ -57,11 +57,4 @@ require (
 	sigs.k8s.io/json v0.0.0-20241010143419-9aa6b5e7a4b3 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.2 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
-)
-
-replace (
-	k8s.io/api => ../api
-	k8s.io/apimachinery => ../apimachinery
-	k8s.io/client-go => ../client-go
-	k8s.io/code-generator => ../code-generator
 )
