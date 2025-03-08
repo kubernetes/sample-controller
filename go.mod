@@ -7,11 +7,11 @@ go 1.24.0
 godebug default=go1.24
 
 require (
-	golang.org/x/time v0.7.0
-	k8s.io/api v0.0.0-20250307053018-84fcd81bee60
-	k8s.io/apimachinery v0.0.0-20250306085752-a3f7d4eded06
-	k8s.io/client-go v0.0.0-20250307173338-d5f336d4f511
-	k8s.io/code-generator v0.0.0-20250307173940-001bab2adc8c
+	golang.org/x/time v0.9.0
+	k8s.io/api v0.0.0-20250308012954-f5876dc39b09
+	k8s.io/apimachinery v0.0.0-20250308012722-ac04c7e41913
+	k8s.io/client-go v0.0.0-20250308013334-b3c87441408e
+	k8s.io/code-generator v0.0.0-20250308014255-35fc80f6d7eb
 	k8s.io/klog/v2 v2.130.1
 )
 
@@ -25,7 +25,7 @@ require (
 	github.com/go-openapi/swag v0.23.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/google/gnostic-models v0.6.9 // indirect
-	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
@@ -45,7 +45,7 @@ require (
 	golang.org/x/term v0.29.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
 	golang.org/x/tools v0.26.0 // indirect
-	google.golang.org/protobuf v1.35.2 // indirect
+	google.golang.org/protobuf v1.36.5 // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.12.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
