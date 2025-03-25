@@ -3,5 +3,5 @@ kind: Foo
 metadata:
   name: example-foo
 spec:
-  deploymentName: example-foo
-  replicas: 1
+  message: example-foo
+  count: 1

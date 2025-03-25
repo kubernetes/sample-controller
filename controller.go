@@ -239,7 +239,7 @@ func (c *Controller) processNextWorkItem(ctx context.Context) bool {
 // converge the two. It then updates the Status block of the Foo resource
 // with the current status of the resource.
 func (c *Controller) syncHandler(ctx context.Context, objectRef cache.ObjectName) error {
-	logger := klog.LoggerWithValues(klog.FromContext(ctx), "objectRef", objectRef)
+	//logger := klog.LoggerWithValues(klog.FromContext(ctx), "objectRef", objectRef)
 
 	// Get the Foo resource with this namespace/name
 	foo, err := c.foosLister.Foos(objectRef.Namespace).Get(objectRef.Name)
@@ -254,55 +254,25 @@ func (c *Controller) syncHandler(ctx context.Context, objectRef cache.ObjectName
 		return err
 	}
 
-	deploymentName := foo.Spec.DeploymentName
-	if deploymentName == "" {
-		// We choose to absorb the error here as the worker would requeue the
-		// resource otherwise. Instead, the next time the resource is updated
-		// the resource will be queued again.
-		utilruntime.HandleErrorWithContext(ctx, nil, "Deployment name missing from object reference", "objectReference", objectRef)
-		return nil
-	}
-
-	// Get the deployment with the name specified in Foo.spec
-	deployment, err := c.deploymentsLister.Deployments(foo.Namespace).Get(deploymentName)
-	// If the resource doesn't exist, we'll create it
-	if errors.IsNotFound(err) {
-		deployment, err = c.kubeclientset.AppsV1().Deployments(foo.Namespace).Create(ctx, newDeployment(foo), metav1.CreateOptions{FieldManager: FieldManager})
-	}
-
-	// If an error occurs during Get/Create, we'll requeue the item so we can
-	// attempt processing again later. This could have been caused by a
-	// temporary network failure, or any other transient reason.
+	// Create or update pods based on the count and message in Foo spec
+	pods, err := c.createOrUpdatePods(ctx, foo)
 	if err != nil {
 		return err
 	}
 
-	// If the Deployment is not controlled by this Foo resource, we should log
-	// a warning to the event recorder and return error msg.
-	if !metav1.IsControlledBy(deployment, foo) {
-		msg := fmt.Sprintf(MessageResourceExists, deployment.Name)
-		c.recorder.Event(foo, corev1.EventTypeWarning, ErrResourceExists, msg)
-		return fmt.Errorf("%s", msg)
+	// Delete the old pods if any, based on the updated count
+	if err := c.cleanupOldPods(ctx, foo, pods); err != nil {
+		return err
 	}
 
-	// If this number of the replicas on the Foo resource is specified, and the
-	// number does not equal the current desired replicas on the Deployment, we
-	// should update the Deployment resource.
-	if foo.Spec.Replicas != nil && *foo.Spec.Replicas != *deployment.Spec.Replicas {
-		logger.V(4).Info("Update deployment resource", "currentReplicas", *deployment.Spec.Replicas, "desiredReplicas", *foo.Spec.Replicas)
-		deployment, err = c.kubeclientset.AppsV1().Deployments(foo.Namespace).Update(ctx, newDeployment(foo), metav1.UpdateOptions{FieldManager: FieldManager})
-	}
-
-	// If an error occurs during Update, we'll requeue the item so we can
-	// attempt processing again later. This could have been caused by a
-	// temporary network failure, or any other transient reason.
+	err = c.updateFooStatus(ctx, foo)
 	if err != nil {
 		return err
 	}
 
 	// Finally, we update the status block of the Foo resource to reflect the
 	// current state of the world
-	err = c.updateFooStatus(ctx, foo, deployment)
+	err = c.updateFooStatus(ctx, foo)
 	if err != nil {
 		return err
 	}
@@ -311,19 +281,116 @@ func (c *Controller) syncHandler(ctx context.Context, objectRef cache.ObjectName
 	return nil
 }
 
-func (c *Controller) updateFooStatus(ctx context.Context, foo *samplev1alpha1.Foo, deployment *appsv1.Deployment) error {
-	// NEVER modify objects from the store. It's a read-only, local cache.
-	// You can use DeepCopy() to make a deep copy of original object and modify this copy
-	// Or create a copy manually for better performance
+func (c *Controller) createOrUpdatePods(ctx context.Context, foo *samplev1alpha1.Foo) ([]corev1.Pod, error) {
+	var pods []corev1.Pod
+
+	for i := 0; i < *foo.Spec.Count; i++ {
+		podName := fmt.Sprintf("%s-pod-%d", foo.Name, i)
+
+		pod, err := c.kubeclientset.CoreV1().Pods(foo.Namespace).Get(ctx, podName, metav1.GetOptions{})
+		if err != nil && errors.IsNotFound(err) {
+			pod = &corev1.Pod{
+				ObjectMeta: metav1.ObjectMeta{
+					Name:      podName,
+					Namespace: foo.Namespace,
+					Labels: map[string]string{
+						"foo": foo.Name,
+					},
+				},
+				Spec: corev1.PodSpec{
+					Containers: []corev1.Container{
+						{
+							Name:  "echo",
+							Image: "busybx",
+							Command: []string{
+								"sh",
+								"-c",
+								fmt.Sprintf("while true; do echo '%s'; sleep 1; done", foo.Spec.Message),
+							},
+						},
+					},
+				},
+			}
+
+			_, err := c.kubeclientset.CoreV1().Pods(foo.Namespace).Create(ctx, pod, metav1.CreateOptions{FieldManager: FieldManager})
+			if err != nil {
+				return nil, err
+			}
+			pods = append(pods, *pod)
+
+		} else if err == nil {
+			// Pod exists, ensure it's running and updated if necessary
+			if pod.Spec.Containers[0].Command[2] != fmt.Sprintf("while true; do echo '%s'; sleep 1; done", foo.Spec.Message) {
+				// If the message is different, we need to update the pod
+				pod.Spec.Containers[0].Command[2] = fmt.Sprintf("while true; do echo '%s'; sleep 1; done", foo.Spec.Message)
+				_, err := c.kubeclientset.CoreV1().Pods(foo.Namespace).Update(ctx, pod, metav1.UpdateOptions{FieldManager: FieldManager})
+				if err != nil {
+					return nil, err
+				}
+			}
+			pods = append(pods, *pod)
+		} else {
+			return nil, err
+		}
+	}
+	return pods, nil
+}
+
+func (c *Controller) cleanupOldPods(ctx context.Context, foo *samplev1alpha1.Foo, currentPods []corev1.Pod) error {
+	existingPodNames := make(map[string]bool)
+	for _, pod := range currentPods {
+		existingPodNames[pod.Name] = true
+	}
+	pods, err := c.kubeclientset.CoreV1().Pods(foo.Namespace).List(ctx, metav1.ListOptions{
+		LabelSelector: "foo=" + foo.Name,
+	})
+	if err != nil {
+		return err
+	}
+	for _, pod := range pods.Items {
+		if !existingPodNames[pod.Name] {
+			err := c.kubeclientset.CoreV1().Pods(foo.Namespace).Delete(ctx, pod.Name, metav1.DeleteOptions{})
+			if err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+
+}
+
+// updateFooStatus updates the status block of the Foo resource to reflect the
+// current state, e.g., the number of available pods.
+func (c *Controller) updateFooStatus(ctx context.Context, foo *samplev1alpha1.Foo) error {
+	// Get the current state of the pods
+	pods, err := c.kubeclientset.CoreV1().Pods(foo.Namespace).List(ctx, metav1.ListOptions{
+		LabelSelector: "foo=" + foo.Name,
+	})
+	if err != nil {
+		return err
+	}
+
+	// Update the Foo resource status with the number of available pods
 	fooCopy := foo.DeepCopy()
-	fooCopy.Status.AvailableReplicas = deployment.Status.AvailableReplicas
-	// If the CustomResourceSubresources feature gate is not enabled,
-	// we must use Update instead of UpdateStatus to update the Status block of the Foo resource.
-	// UpdateStatus will not allow changes to the Spec of the resource,
-	// which is ideal for ensuring nothing other than resource status has been updated.
-	_, err := c.sampleclientset.SamplecontrollerV1alpha1().Foos(foo.Namespace).UpdateStatus(ctx, fooCopy, metav1.UpdateOptions{FieldManager: FieldManager})
+	fooCopy.Status.AvailableReplicas = int32(len(pods.Items))
+
+	_, err = c.sampleclientset.SamplecontrollerV1alpha1().Foos(foo.Namespace).UpdateStatus(ctx, fooCopy, metav1.UpdateOptions{FieldManager: FieldManager})
 	return err
 }
+
+// func (c *Controller) updateFooStatus(ctx context.Context, foo *samplev1alpha1.Foo, deployment *appsv1.Deployment) error {
+// 	// NEVER modify objects from the store. It's a read-only, local cache.
+// 	// You can use DeepCopy() to make a deep copy of original object and modify this copy
+// 	// Or create a copy manually for better performance
+// 	fooCopy := foo.DeepCopy()
+// 	fooCopy.Status.AvailableReplicas = deployment.Status.AvailableReplicas
+// 	// If the CustomResourceSubresources feature gate is not enabled,
+// 	// we must use Update instead of UpdateStatus to update the Status block of the Foo resource.
+// 	// UpdateStatus will not allow changes to the Spec of the resource,
+// 	// which is ideal for ensuring nothing other than resource status has been updated.
+// 	_, err := c.sampleclientset.SamplecontrollerV1alpha1().Foos(foo.Namespace).UpdateStatus(ctx, fooCopy, metav1.UpdateOptions{FieldManager: FieldManager})
+// 	return err
+// }
 
 // enqueueFoo takes a Foo resource and converts it into a namespace/name
 // string which is then put onto the work queue. This method should *not* be
@@ -363,7 +430,7 @@ func (c *Controller) handleObject(obj interface{}) {
 		}
 		logger.V(4).Info("Recovered deleted object", "resourceName", object.GetName())
 	}
-	logger.V(4).Info("Processing object", "object", klog.KObj(object))
+	//logger.V(4).Info("Processing object", "object", klog.KObj(object))
 	if ownerRef := metav1.GetControllerOf(object); ownerRef != nil {
 		// If this object is not owned by a Foo, we should not do anything more
 		// with it.
@@ -377,7 +444,8 @@ func (c *Controller) handleObject(obj interface{}) {
 			return
 		}
 
-		c.enqueueFoo(foo)
+		// Handle pod deletion when Foo is deleted
+		c.cleanupOldPods(context.Background(), foo, nil)
 		return
 	}
 }
@@ -385,37 +453,37 @@ func (c *Controller) handleObject(obj interface{}) {
 // newDeployment creates a new Deployment for a Foo resource. It also sets
 // the appropriate OwnerReferences on the resource so handleObject can discover
 // the Foo resource that 'owns' it.
-func newDeployment(foo *samplev1alpha1.Foo) *appsv1.Deployment {
-	labels := map[string]string{
-		"app":        "nginx",
-		"controller": foo.Name,
-	}
-	return &appsv1.Deployment{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      foo.Spec.DeploymentName,
-			Namespace: foo.Namespace,
-			OwnerReferences: []metav1.OwnerReference{
-				*metav1.NewControllerRef(foo, samplev1alpha1.SchemeGroupVersion.WithKind("Foo")),
-			},
-		},
-		Spec: appsv1.DeploymentSpec{
-			Replicas: foo.Spec.Replicas,
-			Selector: &metav1.LabelSelector{
-				MatchLabels: labels,
-			},
-			Template: corev1.PodTemplateSpec{
-				ObjectMeta: metav1.ObjectMeta{
-					Labels: labels,
-				},
-				Spec: corev1.PodSpec{
-					Containers: []corev1.Container{
-						{
-							Name:  "nginx",
-							Image: "nginx:latest",
-						},
-					},
-				},
-			},
-		},
-	}
-}
+// func newDeployment(foo *samplev1alpha1.Foo) *appsv1.Deployment {
+// 	labels := map[string]string{
+// 		"app":        "nginx",
+// 		"controller": foo.Name,
+// 	}
+// 	return &appsv1.Deployment{
+// 		ObjectMeta: metav1.ObjectMeta{
+// 			Name:      foo.Spec.DeploymentName,
+// 			Namespace: foo.Namespace,
+// 			OwnerReferences: []metav1.OwnerReference{
+// 				*metav1.NewControllerRef(foo, samplev1alpha1.SchemeGroupVersion.WithKind("Foo")),
+// 			},
+// 		},
+// 		Spec: appsv1.DeploymentSpec{
+// 			Replicas: foo.Spec.Replicas,
+// 			Selector: &metav1.LabelSelector{
+// 				MatchLabels: labels,
+// 			},
+// 			Template: corev1.PodTemplateSpec{
+// 				ObjectMeta: metav1.ObjectMeta{
+// 					Labels: labels,
+// 				},
+// 				Spec: corev1.PodSpec{
+// 					Containers: []corev1.Container{
+// 						{
+// 							Name:  "nginx",
+// 							Image: "nginx:latest",
+// 						},
+// 					},
+// 				},
+// 			},
+// 		},
+// 	}
+// }

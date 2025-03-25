@@ -20,12 +20,14 @@ spec:
             spec:
               type: object
               properties:
-                deploymentName:
+                message:
                   type: string
-                replicas:
+                  description: "The message to echo in each pod"
+                count:
                   type: integer
                   minimum: 1
                   maximum: 10
+                  description: "The number of pods to create"
             status:
               type: object
               properties:
