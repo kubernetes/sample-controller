@@ -8,10 +8,10 @@ godebug default=go1.24
 
 require (
 	golang.org/x/time v0.9.0
-	k8s.io/api v0.0.0
-	k8s.io/apimachinery v0.0.0
-	k8s.io/client-go v0.0.0
-	k8s.io/code-generator v0.0.0
+	k8s.io/api v0.0.0-20250503031400-f7e72be095ee
+	k8s.io/apimachinery v0.0.0-20250503031111-512f488de379
+	k8s.io/client-go v0.0.0-20250503031754-7aa362d5dd59
+	k8s.io/code-generator v0.0.0-20250503032644-1124c4112454
 	k8s.io/klog/v2 v2.130.1
 )
 
@@ -55,11 +55,4 @@ require (
 	sigs.k8s.io/randfill v1.0.0 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.7.0 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
-)
-
-replace (
-	k8s.io/api => ../api
-	k8s.io/apimachinery => ../apimachinery
-	k8s.io/client-go => ../client-go
-	k8s.io/code-generator => ../code-generator
 )
