@@ -47,7 +47,7 @@ func main() {
 
 	cfg, err := clientcmd.BuildConfigFromFlags(masterURL, kubeconfig)
 	if err != nil {
-		logger.Error(err, "Error building kubeconfig")
+		logger.Error(err, "Error Building kubeconfig")
 		klog.FlushAndExit(klog.ExitFlushTimeout, 1)
 	}
 
