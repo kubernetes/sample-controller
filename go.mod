@@ -8,10 +8,10 @@ godebug default=go1.25
 
 require (
 	golang.org/x/time v0.9.0
-	k8s.io/api v0.0.0-20251204222646-382014e64b8e
-	k8s.io/apimachinery v0.0.0-20251204222123-56aa7d5cc8bb
-	k8s.io/client-go v0.0.0-20251204223340-453ad29ccd47
-	k8s.io/code-generator v0.0.0-20251204225359-ce3f9b635c2d
+	k8s.io/api v0.0.0-20251218022515-cc3b8d55eb43
+	k8s.io/apimachinery v0.0.0-20251218022201-cec5dd05301e
+	k8s.io/client-go v0.0.0-20251218022938-0d964cc38634
+	k8s.io/code-generator v0.0.0-20251218023844-9e814c2dceb6
 	k8s.io/klog/v2 v2.130.1
 	k8s.io/utils v0.0.0-20251002143259-bc988d571ff4
 )
@@ -25,7 +25,6 @@ require (
 	github.com/go-openapi/jsonreference v0.20.2 // indirect
 	github.com/go-openapi/swag v0.23.0 // indirect
 	github.com/google/gnostic-models v0.7.0 // indirect
-	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
