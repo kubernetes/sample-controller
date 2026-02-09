@@ -8,10 +8,10 @@ godebug default=go1.25
 
 require (
 	golang.org/x/time v0.14.0
-	k8s.io/api v0.0.0-20260205193817-6f99b47a2bbd
+	k8s.io/api v0.0.0-20260206114330-2024a969c4aa
 	k8s.io/apimachinery v0.0.0-20260205233455-f12546b4989d
-	k8s.io/client-go v0.0.0-20260206035242-67ce5196123a
-	k8s.io/code-generator v0.0.0-20260206040502-0f34ff6ed017
+	k8s.io/client-go v0.0.0-20260210000021-c6e2e47b317b
+	k8s.io/code-generator v0.0.0-20260209200359-dcd4edcd2efc
 	k8s.io/klog/v2 v2.130.1
 	k8s.io/kube-openapi v0.0.0-20260127142750-a19766b6e2d4
 	k8s.io/utils v0.0.0-20260108192941-914a6e750570
