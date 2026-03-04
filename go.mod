@@ -10,8 +10,8 @@ require (
 	golang.org/x/time v0.9.0
 	k8s.io/api v0.0.0-20251204222945-bbcbaa8f8665
 	k8s.io/apimachinery v0.0.0-20251204222403-72d71eac265e
-	k8s.io/client-go v0.0.0-20251204213705-891f94c690cb
-	k8s.io/code-generator v0.0.0-20251204225556-840eca38f423
+	k8s.io/client-go v0.0.0-20260304191620-f80003c24087
+	k8s.io/code-generator v0.0.0-20260304191620-397b82df2302
 	k8s.io/klog/v2 v2.130.1
 	k8s.io/utils v0.0.0-20251002143259-bc988d571ff4
 )
