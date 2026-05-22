@@ -8,10 +8,10 @@ godebug default=go1.26
 
 require (
 	golang.org/x/time v0.15.0
-	k8s.io/api v0.0.0-20260522014606-dda3f55e69b8
-	k8s.io/apimachinery v0.0.0-20260519223618-a7225b106d19
-	k8s.io/client-go v0.0.0-20260522215153-c39cf12e4304
-	k8s.io/code-generator v0.0.0-20260522220124-ede19841a38c
+	k8s.io/api v0.0.0-20260522214638-8e297d0e4ac0
+	k8s.io/apimachinery v0.0.0-20260522214236-b77c0c3f1e68
+	k8s.io/client-go v0.0.0-20260522215159-7b85db3954c6
+	k8s.io/code-generator v0.0.0-20260522220126-912ac1c1f2f6
 	k8s.io/klog/v2 v2.140.0
 	k8s.io/kube-openapi v0.0.0-20260519202549-bbf5c5577288
 	k8s.io/utils v0.0.0-20260210185600-b8788abfbbc2
@@ -49,12 +49,12 @@ require (
 	go.yaml.in/yaml/v2 v2.4.4 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
 	golang.org/x/mod v0.35.0 // indirect
-	golang.org/x/net v0.53.0 // indirect
+	golang.org/x/net v0.54.0 // indirect
 	golang.org/x/oauth2 v0.36.0 // indirect
 	golang.org/x/sync v0.20.0 // indirect
-	golang.org/x/sys v0.43.0 // indirect
-	golang.org/x/term v0.42.0 // indirect
-	golang.org/x/text v0.36.0 // indirect
+	golang.org/x/sys v0.45.0 // indirect
+	golang.org/x/term v0.43.0 // indirect
+	golang.org/x/text v0.37.0 // indirect
 	golang.org/x/tools v0.44.0 // indirect
 	google.golang.org/protobuf v1.36.12-0.20260120151049-f2248ac996af // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.13.0 // indirect
